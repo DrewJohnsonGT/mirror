@@ -1,0 +1,18 @@
+.root {
+}
+
+.date {
+    font-weight: 300;
+    font-size: 2rem;
+}
+
+.time {
+    font-weight: 100;
+    font-size: 4rem;
+    margin-top: -0.75rem;
+}
+
+.seconds {
+    color: rgb(146, 146, 146);
+    font-size: 1rem;
+}

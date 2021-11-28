@@ -1,0 +1,9 @@
+.root {
+    display: flex;
+    height: 100%;
+}
+
+.message {
+    font-size: 2rem;
+    margin: auto;
+}

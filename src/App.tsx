@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import GridLayout from 'react-grid-layout';
+import { Module } from 'types';
+import { Compliments, DateTime, ToDo, Weather } from 'components/modules';
+import { useGridLayout } from 'api/useGridLayout';
+import { Loading } from 'components';
+
+const MODULES = [
+    {
+        key: Module.Compliments,
+        component: Compliments,
+    },
+    {
+        key: Module.DateTime,
+        component: DateTime,
+    },
+    {
+        key: Module.ToDo,
+        component: ToDo,
+    },
+    {
+        key: Module.Weather,
+        component: Weather,
+    },
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { layout, onLayoutChange } = useGridLayout();
+    if (!layout) return <Loading message='Loading Layout' />;
+    return (
+        <GridLayout
+            layout={layout}
+            onLayoutChange={onLayoutChange}
+            cols={12}
+            rowHeight={150}
+            width={1024}>
+            {MODULES.map(({ key, component: ModuleComponent }) => (
+                <div key={key}>
+                    <ModuleComponent />
+                </div>
+            ))}
+        </GridLayout>
+    );
 }
 
 export default App;
