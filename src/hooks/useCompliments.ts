@@ -84,10 +84,10 @@ const getTimeOfDay = () => {
     if (hour < 12 && hour > 2) {
         return TimeOfDay.Morning;
     }
-    if (hour > 12 && hour < 18) {
+    if (hour > 12 && hour < 17) {
         return TimeOfDay.Afternoon;
     }
-    if (hour >= 18 && hour <= 21) {
+    if (hour >= 17 && hour <= 21) {
         return TimeOfDay.Evening;
     }
     return TimeOfDay.Night;

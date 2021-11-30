@@ -1,0 +1,47 @@
+.root {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    font-weight: 100;
+}
+
+.image {
+    width: 150px;
+    height: 150px;
+}
+
+.degree {
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+
+.current {
+    display: flex;
+    font-size: 5rem;
+}
+
+.otherInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+}
+.description {
+    text-transform: capitalize;
+    font-size: 1.25rem;
+}

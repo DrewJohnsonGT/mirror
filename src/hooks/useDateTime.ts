@@ -18,12 +18,14 @@ export const useDateTime = () => {
         day: 'numeric',
     });
 
-    const timeString = date.toLocaleTimeString([], {
-        hour: '2-digit',
-        minute: '2-digit',
-    });
-
+    const timeString = date
+        .toLocaleTimeString([], {
+            hour: '2-digit',
+            minute: '2-digit',
+        })
+        .slice(0, -3);
+    const abbreviation = date.getHours() >= 12 ? 'PM' : 'AM';
     const seconds = formatSeconds(date.getSeconds());
 
-    return { dateString, timeString, seconds };
+    return { dateString, timeString, seconds, abbreviation };
 };

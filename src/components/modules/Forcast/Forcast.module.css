@@ -1,0 +1,29 @@
+.root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.forcast {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.25rem;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+}
+
+.temps {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.low {
+    font-weight: 100;
+    color: darkgray;
+}
