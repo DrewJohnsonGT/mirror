@@ -1,11 +1,11 @@
-import { useForcast } from 'hooks/useForcast';
+import { useWeather } from 'hooks/useWeather';
 import styles from './Forcast.module.css';
 
 export const Forcast = () => {
-    const { forcast } = useForcast();
+    const { forcast } = useWeather();
     return (
         <div className={styles.root}>
-            {forcast.map(({ iconLink, high, low, weekday }) => (
+            {forcast?.map(({ iconLink, high, low, weekday }) => (
                 <div className={styles.forcast} key={weekday}>
                     <span className={styles.weekday}>{weekday}</span>
                     <img className={styles.icon} src={iconLink} alt='' />

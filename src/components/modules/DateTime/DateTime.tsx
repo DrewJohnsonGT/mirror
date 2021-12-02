@@ -8,7 +8,7 @@ export const DateTime = () => {
             <div className={styles.date}>{dateString}</div>
             <div className={styles.time}>
                 <div className={styles.timeString}>{timeString}</div>
-                <div>
+                <div className={styles.secondary}>
                     <div className={styles.seconds}>{seconds}</div>
                     <div className={styles.abbreviation}>{abbreviation}</div>
                 </div>

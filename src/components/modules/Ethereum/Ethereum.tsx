@@ -1,15 +1,5 @@
-import { useMarketSymbol } from 'hooks/useMarketSymbol';
-import { AnimatingNumber } from 'components';
+import { MarketPriceModule } from 'components';
 
-export const Ethereum = () => {
-    const { currentPrice: currentETHPrice } = useMarketSymbol({
-        symbol: 'ethusdt',
-    });
-    return (
-        <div>
-            <div>
-                <AnimatingNumber value={currentETHPrice} />
-            </div>
-        </div>
-    );
-};
+export const Ethereum = () => (
+    <MarketPriceModule symbol='ethusdt' label='ETH' />
+);

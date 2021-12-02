@@ -67,7 +67,7 @@ export const AnimatingNumber = ({ value }: { value: number }) => {
             : Delta.Decrease;
 
     return (
-        <motion.div layout className='ticker-view'>
+        <motion.span layout className='ticker-view'>
             {numArray.map((number, index) =>
                 number === '.' ? (
                     <DecimalColumn key={index} />
@@ -75,6 +75,7 @@ export const AnimatingNumber = ({ value }: { value: number }) => {
                     <NumberColumn key={index} digit={number} delta={delta} />
                 )
             )}
-        </motion.div>
+            <span className='dollar-sign'>$</span>
+        </motion.span>
     );
 };

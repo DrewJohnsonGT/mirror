@@ -1,15 +1,3 @@
-import { useMarketSymbol } from 'hooks/useMarketSymbol';
-import { AnimatingNumber } from 'components';
+import { MarketPriceModule } from 'components';
 
-export const Bitcoin = () => {
-    const { currentPrice: currentBTCPrice } = useMarketSymbol({
-        symbol: 'btcusdt',
-    });
-    return (
-        <div>
-            <div>
-                <AnimatingNumber value={currentBTCPrice} />
-            </div>
-        </div>
-    );
-};
+export const Bitcoin = () => <MarketPriceModule symbol='btcusdt' label='BTC' />;

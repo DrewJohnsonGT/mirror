@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
     overflow: hidden;
-    font-size: 56px;
+    font-size: 1.5rem;
     position: relative;
     color: white;
 }
@@ -37,6 +37,12 @@ body {
 
 .ticker-column.decrease {
     animation: pulseRed 500ms cubic-bezier(0.4, 0, 0.6, 1) 1;
+}
+
+.dollar-sign {
+    font-weight: 100;
+    margin-right: 0.25rem;
+    color: rgb(187, 187, 187);
 }
 
 @keyframes pulseGreen {

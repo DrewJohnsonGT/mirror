@@ -1,9 +1,19 @@
 import { useState, useEffect } from 'react';
 import { w3cwebsocket as W3CWebSocket, IMessageEvent } from 'websocket';
 
-export const useMarketSymbol = ({ symbol }: { symbol: string }) => {
+const DEFAULT_TICK_RATE = 5;
+
+export const useMarketSymbol = ({
+    symbol,
+    tickRate = DEFAULT_TICK_RATE,
+}: {
+    symbol: string;
+    tickRate?: number;
+}) => {
     const [currentPrice, setCurrentPrice] = useState(0);
+
     useEffect(() => {
+        let tick = 0;
         const client = new W3CWebSocket(
             `wss://stream.binance.com:9443/ws/${symbol}@kline_1m`
         );
@@ -12,11 +22,12 @@ export const useMarketSymbol = ({ symbol }: { symbol: string }) => {
         };
         client.onmessage = ({ data }: IMessageEvent) => {
             const incomingData = JSON.parse(data as string);
-            if (incomingData.k) {
+            if (incomingData.k && tick % tickRate === 0) {
                 const symbolPrice = Number(incomingData.k.c);
                 setCurrentPrice(symbolPrice);
             }
+            tick++;
         };
-    }, [symbol]);
+    }, [symbol, tickRate]);
     return { currentPrice };
 };

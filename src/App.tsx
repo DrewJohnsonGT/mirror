@@ -43,9 +43,10 @@ function App() {
             layout={layout}
             onLayoutChange={onLayoutChange}
             cols={12}
-            rowHeight={150}
+            rowHeight={25}
             width={1024}
-            isResizable={!!process.env.REACT_APP_IS_DEVELOPMENT}>
+            isResizable={!!process.env.REACT_APP_IS_DEVELOPMENT}
+            allowOverlap={true}>
             {MODULES.map(({ key, component: ModuleComponent }) => (
                 <div key={key}>
                     <ModuleComponent />

@@ -1,47 +1,84 @@
 .root {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 0.75fr 0.5fr 0.75fr;
 }
 
-.main {
+.overview {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0.75rem;
+}
+
 .sub {
-    margin-top: auto;
     margin-bottom: auto;
 }
 
 .row {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     font-weight: 100;
 }
 
-.image {
+.imageDiv {
     width: 150px;
     height: 150px;
 }
 
+.image {
+    margin-top: -25px;
+}
+
 .degree {
     font-size: 2rem;
+    line-height: 2rem;
     margin-top: 1rem;
 }
 
 .current {
     display: flex;
-    font-size: 5rem;
+    justify-content: center;
+    font-weight: 100;
+    font-size: 6rem;
+    line-height: 6rem;
 }
 
 .otherInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 0.25rem;
 }
+
 .description {
     text-transform: capitalize;
-    font-size: 1.25rem;
+    font-size: 1rem;
+    font-weight: 300;
+    overflow-wrap: break-word;
+    text-align: center;
+}
+
+.today {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+}
+
+.high {
+    text-align: center;
+    font-weight: 300;
+    flex: 1;
+}
+
+.low {
+    flex: 1;
+    text-align: center;
+    font-weight: 100;
+    color: darkgray;
 }
