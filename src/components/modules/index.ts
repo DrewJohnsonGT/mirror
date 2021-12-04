@@ -5,3 +5,4 @@ export { Weather } from './Weather/Weather';
 export { Forcast } from './Forcast/Forcast';
 export { Bitcoin } from './Bitcoin/Bitcoin';
 export { Ethereum } from './Ethereum/Ethereum';
+export { Moon } from './Moon/Moon';

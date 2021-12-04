@@ -8,6 +8,7 @@ import {
     Forcast,
     ToDo,
     Weather,
+    Moon,
 } from 'components/modules';
 import { useGridLayout } from 'api/useGridLayout';
 import { Loading } from 'components';
@@ -33,6 +34,7 @@ const MODULES = [
     { key: Module.Forcast, component: Forcast },
     { key: Module.Bitcoin, component: Bitcoin },
     { key: Module.Ethereum, component: Ethereum },
+    { key: Module.Moon, component: Moon },
 ];
 
 function App() {

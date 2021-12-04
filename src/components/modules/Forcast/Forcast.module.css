@@ -1,8 +1,8 @@
 .root {
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    gap: 0.75rem;
+    align-items: flex-start;
+    gap: 0.25rem;
 }
 
 .forcast {
@@ -14,8 +14,9 @@
 }
 
 .icon {
-    width: 50px;
-    height: 50px;
+    margin: -0.75rem 0;
+    width: 75px;
+    height: 75px;
 }
 
 .temps {
@@ -26,4 +27,10 @@
 .low {
     font-weight: 100;
     color: darkgray;
+}
+
+.precip {
+    font-weight: 100;
+    font-size: 0.75rem;
+    margin-top: -0.25rem;
 }

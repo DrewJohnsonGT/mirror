@@ -23,6 +23,8 @@ interface RawForcast {
         max: number;
     };
     weather: Weather[];
+    snow?: number;
+    rain?: number;
 }
 interface WeatherResponse {
     current: {
@@ -45,10 +47,12 @@ interface Forcast {
     low: string;
     weekday: string;
     date: number;
+    precip: number;
 }
 
 const OPEN_WEATHER_API_KEY = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY;
 const WEATHER_ENDPOINT = 'https://api.openweathermap.org/data/2.5/onecall';
+const INCHES_IN_MM = 0.0393701;
 
 const generateOpenWeatherEndpoint = (base: string, params?: string) =>
     base +
@@ -97,12 +101,17 @@ const getForcast = (dailyForcast: RawForcast[]): Forcast[] => {
     return dailyForcast.slice(0, -2).map((dayForcast) => {
         const overallWeather = dayForcast.weather[0];
         const description = overallWeather.description;
-        const iconLink = generateIconLink(overallWeather.icon, 2);
+        const iconLink = generateIconLink(overallWeather.icon, 4);
         const high = formatDisplayTemp(dayForcast.temp.max);
         const low = formatDisplayTemp(dayForcast.temp.min);
         const date = dayForcast.dt * 1000;
         const weekday = WEEKDAYS[new Date(date).getDay()];
-        return { iconLink, description, high, low, weekday, date };
+        const snow = dayForcast.snow ? dayForcast.snow : 0;
+        const rain = dayForcast.rain ? dayForcast.rain : 0;
+        const precip =
+            Math.round(((snow + rain) * INCHES_IN_MM + Number.EPSILON) * 100) /
+            100;
+        return { iconLink, description, high, low, weekday, date, precip };
     });
 };
 
@@ -122,7 +131,7 @@ interface WeatherResponse {
 
 export const useWeather = (): Partial<WeatherResponse> => {
     const [rawWeather, setRawWeather] = useState<WeatherResponse>();
-
+    console.log(rawWeather);
     const updateWeather = () => {
         getAPIData(generateOpenWeatherEndpoint(WEATHER_ENDPOINT)).then(
             (res: WeatherResponse) => {

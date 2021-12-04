@@ -6,6 +6,7 @@ export enum Module {
     Forcast = 'Forcast',
     Bitcoin = 'Bitcoin',
     Ethereum = 'Ethereum',
+    Moon = 'Moon',
 }
 
 export enum TimeOfDay {
