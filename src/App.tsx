@@ -48,8 +48,7 @@ export const App = () => {
       rowHeight={25}
       width={1024}
       isResizable={!!process.env.REACT_APP_IS_DEVELOPMENT}
-      allowOverlap={true}
-    >
+      allowOverlap={true}>
       {MODULES.map(({ component: ModuleComponent, key }) => (
         <div key={key}>
           <ModuleComponent />

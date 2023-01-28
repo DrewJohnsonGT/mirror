@@ -1,9 +1,9 @@
 html,
 body,
 #root {
-  transform: rotate(90deg);
-  height: 100vh;
-  width: 100vw;
+  transform: rotate(-90deg);
+  height: 100vw;
+  width: 100vh;
   margin: 0;
   padding: 0.25rem;
   background-color: black;
