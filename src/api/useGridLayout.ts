@@ -16,6 +16,7 @@ const getLayout = async () => {
 };
 
 const onLayoutChange = (newLayout: Layout[]) => {
+  console.log(newLayout);
   Promise.all(
     newLayout.map(async ({ h, i, w, x, y }) => {
       await setDoc(doc(db, GRID_LAYOUT_COLLECTION, i), { h, w, x, y });
