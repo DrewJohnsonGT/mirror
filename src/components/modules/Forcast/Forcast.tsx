@@ -3,7 +3,6 @@ import styles from './Forcast.module.css';
 
 export const Forcast = () => {
   const { forcast } = useWeather();
-  console.log(forcast);
   return (
     <div className={styles.root}>
       {forcast?.map(({ high, iconLink, low, precip, weekday }) => (

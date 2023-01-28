@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { type IMessageEvent, w3cwebsocket as W3CWebSocket } from 'websocket';
 
-const DEFAULT_TICK_RATE = 5;
+// 30 minutes - API limit 100 daily requests
+const DEFAULT_TICK_RATE = 1000 * 60 * 30;
 
 export const useMarketSymbol = ({
   symbol,
@@ -12,22 +12,35 @@ export const useMarketSymbol = ({
 }) => {
   const [currentPrice, setCurrentPrice] = useState(0);
 
+  const updatePrice = () => {
+    if (process.env.REACT_APP_IS_DEVELOPMENT) return;
+    fetch(
+      `https://rest.coinapi.io/v1/ohlcv/${symbol}/latest?period_id=30MIN&limit=1`,
+      {
+        headers: {
+          'X-CoinAPI-Key': process.env.REACT_APP_CRYPTO_API_KEY,
+        },
+      },
+    )
+      .then(async (res) => await res.json())
+      .then((price) => {
+        const priceHigh = price[0].price_high;
+        setCurrentPrice(parseFloat(priceHigh));
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  };
+
   useEffect(() => {
-    let tick = 0;
-    const client = new W3CWebSocket(
-      `wss://stream.binance.com:9443/ws/${symbol}@kline_1m`,
-    );
-    client.onopen = () => {
-      console.log(`WebSocket Client Connected for ${symbol}`);
-    };
-    client.onmessage = ({ data }: IMessageEvent) => {
-      const incomingData = JSON.parse(data as string);
-      if (incomingData.k && tick % tickRate === 0) {
-        const symbolPrice = Number(incomingData.k.c);
-        setCurrentPrice(symbolPrice);
-      }
-      tick++;
+    updatePrice();
+    const interval = setInterval(() => {
+      updatePrice();
+    }, tickRate);
+    return () => {
+      clearInterval(interval);
     };
   }, [symbol, tickRate]);
+
   return { currentPrice };
 };

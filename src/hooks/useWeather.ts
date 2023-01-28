@@ -50,7 +50,8 @@ interface Forcast {
   precip: number;
 }
 
-const OPEN_WEATHER_API_KEY = process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY;
+const OPEN_WEATHER_API_KEY =
+  process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY || '';
 const WEATHER_ENDPOINT = 'https://api.openweathermap.org/data/2.5/onecall';
 const INCHES_IN_MM = 0.0393701;
 
@@ -130,13 +131,14 @@ interface WeatherResponse {
 
 export const useWeather = (): Partial<WeatherResponse> => {
   const [rawWeather, setRawWeather] = useState<WeatherResponse>();
-  console.log(rawWeather);
   const updateWeather = () => {
-    getAPIData(generateOpenWeatherEndpoint(WEATHER_ENDPOINT)).then(
-      (res: WeatherResponse) => {
+    getAPIData(generateOpenWeatherEndpoint(WEATHER_ENDPOINT))
+      .then((res: WeatherResponse) => {
         setRawWeather(res);
-      },
-    );
+      })
+      .catch((e) => {
+        console.error(e);
+      });
   };
 
   useEffect(() => {

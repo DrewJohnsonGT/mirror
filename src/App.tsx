@@ -37,7 +37,7 @@ const MODULES = [
   { component: Moon, key: Module.Moon },
 ];
 
-function App() {
+export const App = () => {
   const { layout, onLayoutChange } = useGridLayout();
   if (!layout) return <Loading message="Loading Layout" />;
   return (
@@ -57,6 +57,4 @@ function App() {
       ))}
     </GridLayout>
   );
-}
-
-export default App;
+};

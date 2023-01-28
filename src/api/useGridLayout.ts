@@ -15,12 +15,16 @@ const getLayout = async () => {
   return result;
 };
 
-const onLayoutChange = async (newLayout: Layout[]) => {
-  await Promise.all(
+const onLayoutChange = (newLayout: Layout[]) => {
+  Promise.all(
     newLayout.map(async ({ h, i, w, x, y }) => {
       await setDoc(doc(db, GRID_LAYOUT_COLLECTION, i), { h, w, x, y });
     }),
-  );
+  )
+    .then(() => {})
+    .catch((e) => {
+      console.error(e);
+    });
 };
 
 export const useGridLayout = () => {
