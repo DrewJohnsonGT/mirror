@@ -1,16 +1,16 @@
-import "./AnimatingNumber.css";
-import { motion } from "framer-motion";
-import { usePrevious } from "hooks/useInterval";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
+import { usePrevious } from 'hooks/useInterval';
+import './AnimatingNumber.css';
 
 enum Delta {
-  Decrease = "decrease",
-  Increase = "increase",
-  None = "",
+  Decrease = 'decrease',
+  Increase = 'increase',
+  None = '',
 }
 
 const formatForDisplay = (number: number = 0) =>
-  parseFloat(Math.max(number, 0).toString()).toFixed(2).split("").reverse();
+  parseFloat(Math.max(number, 0).toString()).toFixed(2).split('').reverse();
 
 function DecimalColumn() {
   return (
@@ -20,9 +20,9 @@ function DecimalColumn() {
   );
 }
 
-function NumberColumn({ digit, delta }: { digit: string; delta: Delta }) {
+function NumberColumn({ delta, digit }: { digit: string; delta: Delta }) {
   const [position, setPosition] = useState(0);
-  const [animationClass, setAnimationClass] = useState("");
+  const [animationClass, setAnimationClass] = useState('');
   const previousDigit = usePrevious(digit);
   const columnContainer = useRef<HTMLDivElement>(null);
 
@@ -32,7 +32,9 @@ function NumberColumn({ digit, delta }: { digit: string; delta: Delta }) {
     setPosition(clientHeight * numberValue);
   };
 
-  useEffect(() => setAnimationClass(delta), [digit, delta, previousDigit]);
+  useEffect(() => {
+    setAnimationClass(delta);
+  }, [digit, delta, previousDigit]);
 
   useEffect(() => {
     setColumnToNumber(digit);
@@ -43,7 +45,9 @@ function NumberColumn({ digit, delta }: { digit: string; delta: Delta }) {
       <motion.div
         animate={{ y: position }}
         className={`ticker-column ${animationClass}`}
-        onAnimationComplete={() => setAnimationClass("")}
+        onAnimationComplete={() => {
+          setAnimationClass('');
+        }}
       >
         {[9, 8, 7, 6, 5, 4, 3, 2, 1, 0].map((num) => (
           <div key={num} className="ticker-digit">
@@ -70,11 +74,11 @@ export const AnimatingNumber = ({ value }: { value: number }) => {
   return (
     <motion.span layout className="ticker-view">
       {numArray.map((number, index) =>
-        number === "." ? (
+        number === '.' ? (
           <DecimalColumn key={index} />
         ) : (
           <NumberColumn key={index} digit={number} delta={delta} />
-        )
+        ),
       )}
       <span className="dollar-sign">$</span>
     </motion.span>

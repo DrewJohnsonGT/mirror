@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 const ONE_SECOND_IN_MS = 1000;
 
@@ -8,24 +8,26 @@ const formatSeconds = (seconds: number) =>
 export const useDateTime = () => {
   const [timestamp, setTimestamp] = useState(Date.now());
   useEffect(() => {
-    setInterval(() => setTimestamp(Date.now()), ONE_SECOND_IN_MS);
+    setInterval(() => {
+      setTimestamp(Date.now());
+    }, ONE_SECOND_IN_MS);
   });
   const date = new Date(timestamp);
   const dateString = date.toLocaleDateString([], {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
+    day: 'numeric',
+    month: 'long',
+    weekday: 'long',
+    year: 'numeric',
   });
 
   const timeString = date
     .toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
+      hour: '2-digit',
+      minute: '2-digit',
     })
     .slice(0, -3);
-  const abbreviation = date.getHours() >= 12 ? "PM" : "AM";
+  const abbreviation = date.getHours() >= 12 ? 'PM' : 'AM';
   const seconds = formatSeconds(date.getSeconds());
 
-  return { dateString, timeString, seconds, abbreviation };
+  return { abbreviation, dateString, seconds, timeString };
 };

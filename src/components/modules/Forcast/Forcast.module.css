@@ -1,36 +1,36 @@
 .root {
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
-    gap: 0.25rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 0.25rem;
 }
 
 .forcast {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
 }
 
 .icon {
-    margin: -0.75rem 0;
-    width: 75px;
-    height: 75px;
+  margin: -0.75rem 0;
+  width: 75px;
+  height: 75px;
 }
 
 .temps {
-    display: flex;
-    gap: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
 }
 
 .low {
-    font-weight: 100;
-    color: darkgray;
+  font-weight: 100;
+  color: darkgray;
 }
 
 .precip {
-    font-weight: 100;
-    font-size: 0.75rem;
-    margin-top: -0.25rem;
+  font-weight: 100;
+  font-size: 0.75rem;
+  margin-top: -0.25rem;
 }

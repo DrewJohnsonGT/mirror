@@ -1,21 +1,21 @@
 .header {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 .hr {
-    color: white;
-    font-weight: bold;
-    opacity: 0.25;
-    margin-bottom: 0.5rem;
+  color: white;
+  font-weight: bold;
+  opacity: 0.25;
+  margin-bottom: 0.5rem;
 }
 
 .todo {
-    font-size: 1.25rem;
-    margin-bottom: 0.25rem;
-    font-weight: 100;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  font-weight: 100;
 }
 
 .bullet {
-    margin-right: 0.25rem;
-    font-size: 0.75rem;
+  margin-right: 0.25rem;
+  font-size: 0.75rem;
 }

@@ -1,8 +1,8 @@
-import styles from "./DateTime.module.css";
-import { useDateTime } from "hooks/useDateTime";
+import { useDateTime } from 'hooks/useDateTime';
+import styles from './DateTime.module.css';
 
 export const DateTime = () => {
-  const { dateString, timeString, seconds, abbreviation } = useDateTime();
+  const { abbreviation, dateString, seconds, timeString } = useDateTime();
   return (
     <div>
       <div className={styles.date}>{dateString}</div>

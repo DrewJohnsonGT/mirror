@@ -1,5 +1,5 @@
-import styles from "./Moon.module.css";
-import { useMoonPhase } from "hooks/useMoonPhase";
+import { useMoonPhase } from 'hooks/useMoonPhase';
+import styles from './Moon.module.css';
 
 export const Moon = () => {
   const { moonImage, nextFullMoon } = useMoonPhase();

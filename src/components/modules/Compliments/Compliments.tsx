@@ -1,5 +1,5 @@
-import styles from "./Compliments.module.css";
-import { useCompliments } from "hooks/useCompliments";
+import { useCompliments } from 'hooks/useCompliments';
+import styles from './Compliments.module.css';
 
 export const Compliments = () => {
   const { compliment } = useCompliments();

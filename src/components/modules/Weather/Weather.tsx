@@ -1,13 +1,13 @@
-import styles from "./Weather.module.css";
-import { useWeather } from "hooks/useWeather";
+import { useWeather } from 'hooks/useWeather';
+import styles from './Weather.module.css';
 
 export const Weather = () => {
   const {
     currentTemperature,
-    feelsLikeTemperature,
     description,
-    iconLink,
+    feelsLikeTemperature,
     humidy,
+    iconLink,
     sunrise,
     sunset,
     todaysHigh,

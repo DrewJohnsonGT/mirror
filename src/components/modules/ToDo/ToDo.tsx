@@ -1,5 +1,5 @@
-import styles from "./ToDo.module.css";
-import { useToDo } from "hooks/useToDo";
+import { useToDo } from 'hooks/useToDo';
+import styles from './ToDo.module.css';
 
 export const ToDo = () => {
   const { todos } = useToDo();

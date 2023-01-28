@@ -1,12 +1,12 @@
 export enum Module {
-  Compliments = "Compliments",
-  DateTime = "DateTime",
-  ToDo = "ToDo",
-  Weather = "Weather",
-  Forcast = "Forcast",
-  Bitcoin = "Bitcoin",
-  Ethereum = "Ethereum",
-  Moon = "Moon",
+  Compliments = 'Compliments',
+  DateTime = 'DateTime',
+  ToDo = 'ToDo',
+  Weather = 'Weather',
+  Forcast = 'Forcast',
+  Bitcoin = 'Bitcoin',
+  Ethereum = 'Ethereum',
+  Moon = 'Moon',
 }
 
 export enum TimeOfDay {

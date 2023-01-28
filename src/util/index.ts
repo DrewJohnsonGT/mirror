@@ -1,3 +1,3 @@
-export { formatDisplayTime } from "./formatDisplayTime";
-export { formatDisplayTemp } from "./formatDisplayTemp";
-export { getWindString } from "./getWindString";
+export { formatDisplayTemp } from './formatDisplayTemp';
+export { formatDisplayTime } from './formatDisplayTime';
+export { getWindString } from './getWindString';

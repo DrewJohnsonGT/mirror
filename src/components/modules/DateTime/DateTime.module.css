@@ -1,27 +1,27 @@
 .date {
-    font-weight: 100;
-    font-size: 2rem;
+  font-weight: 100;
+  font-size: 2rem;
 }
 
 .time {
-    display: flex;
-    font-weight: 100;
-    font-size: 6rem;
-    margin-top: -2.5rem;
+  display: flex;
+  font-weight: 100;
+  font-size: 6rem;
+  margin-top: -2.5rem;
 }
 
 .secondary {
-    margin: auto 0;
-    margin-top: 2.2rem;
-    margin-left: 0.25rem;
+  margin: auto 0;
+  margin-top: 2.2rem;
+  margin-left: 0.25rem;
 }
 .seconds {
-    color: rgb(187, 187, 187);
-    font-size: 1.75rem;
-    width: 2.5rem;
+  color: rgb(187, 187, 187);
+  font-size: 1.75rem;
+  width: 2.5rem;
 }
 
 .abbreviation {
-    color: rgb(187, 187, 187);
-    font-size: 1.75rem;
+  color: rgb(187, 187, 187);
+  font-size: 1.75rem;
 }

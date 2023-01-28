@@ -1,85 +1,85 @@
 .root {
-    display: grid;
-    grid-template-columns: 0.75fr 0.5fr 0.75fr;
+  display: grid;
+  grid-template-columns: 0.75fr 0.5fr 0.75fr;
 }
 
 .overview {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-right: 1.75rem;
-    margin-top: -0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 1.75rem;
+  margin-top: -0.5rem;
 }
 
 .sub {
-    margin-bottom: auto;
+  margin-bottom: auto;
 }
 
 .row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    font-weight: 100;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-weight: 100;
 }
 
 .imageDiv {
-    width: 150px;
-    height: 150px;
+  width: 150px;
+  height: 150px;
 }
 
 .image {
-    margin-top: -25px;
+  margin-top: -25px;
 }
 
 .degree {
-    font-size: 2rem;
-    line-height: 2rem;
-    margin-top: 1rem;
+  font-size: 2rem;
+  line-height: 2rem;
+  margin-top: 1rem;
 }
 
 .current {
-    display: flex;
-    justify-content: center;
-    font-weight: 100;
-    font-size: 6rem;
-    line-height: 6rem;
+  display: flex;
+  justify-content: center;
+  font-weight: 100;
+  font-size: 6rem;
+  line-height: 6rem;
 }
 
 .otherInfo {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .description {
-    text-transform: capitalize;
-    font-size: 1rem;
-    font-weight: 300;
-    overflow-wrap: break-word;
-    text-align: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 300;
+  overflow-wrap: break-word;
+  text-align: center;
 }
 
 .today {
-    display: flex;
-    gap: 0.75rem;
-    font-size: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  font-size: 1.5rem;
 }
 
 .high {
-    text-align: center;
-    font-weight: 300;
-    flex: 1;
+  text-align: center;
+  font-weight: 300;
+  flex: 1;
 }
 
 .low {
-    flex: 1;
-    text-align: center;
-    font-weight: 100;
-    color: darkgray;
+  flex: 1;
+  text-align: center;
+  font-weight: 100;
+  color: darkgray;
 }

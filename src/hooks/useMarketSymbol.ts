@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { w3cwebsocket as W3CWebSocket, IMessageEvent } from "websocket";
+import { useEffect, useState } from 'react';
+import { type IMessageEvent, w3cwebsocket as W3CWebSocket } from 'websocket';
 
 const DEFAULT_TICK_RATE = 5;
 
@@ -15,7 +15,7 @@ export const useMarketSymbol = ({
   useEffect(() => {
     let tick = 0;
     const client = new W3CWebSocket(
-      `wss://stream.binance.com:9443/ws/${symbol}@kline_1m`
+      `wss://stream.binance.com:9443/ws/${symbol}@kline_1m`,
     );
     client.onopen = () => {
       console.log(`WebSocket Client Connected for ${symbol}`);

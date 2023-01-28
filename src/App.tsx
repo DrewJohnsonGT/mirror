@@ -1,40 +1,40 @@
-import { useGridLayout } from "api/useGridLayout";
-import { Loading } from "components";
+import GridLayout from 'react-grid-layout';
+import { useGridLayout } from 'api/useGridLayout';
+import { Loading } from 'components';
 import {
   Bitcoin,
   Compliments,
   DateTime,
   Ethereum,
   Forcast,
+  Moon,
   ToDo,
   Weather,
-  Moon,
-} from "components/modules";
-import GridLayout from "react-grid-layout";
-import "tailwindcss/tailwind.css";
-import { Module } from "types";
+} from 'components/modules';
+import 'tailwindcss/tailwind.css';
+import { Module } from 'types';
 
 const MODULES = [
   {
-    key: Module.Compliments,
     component: Compliments,
+    key: Module.Compliments,
   },
   {
-    key: Module.DateTime,
     component: DateTime,
+    key: Module.DateTime,
   },
   {
-    key: Module.ToDo,
     component: ToDo,
+    key: Module.ToDo,
   },
   {
-    key: Module.Weather,
     component: Weather,
+    key: Module.Weather,
   },
-  { key: Module.Forcast, component: Forcast },
-  { key: Module.Bitcoin, component: Bitcoin },
-  { key: Module.Ethereum, component: Ethereum },
-  { key: Module.Moon, component: Moon },
+  { component: Forcast, key: Module.Forcast },
+  { component: Bitcoin, key: Module.Bitcoin },
+  { component: Ethereum, key: Module.Ethereum },
+  { component: Moon, key: Module.Moon },
 ];
 
 function App() {
@@ -50,7 +50,7 @@ function App() {
       isResizable={!!process.env.REACT_APP_IS_DEVELOPMENT}
       allowOverlap={true}
     >
-      {MODULES.map(({ key, component: ModuleComponent }) => (
+      {MODULES.map(({ component: ModuleComponent, key }) => (
         <div key={key}>
           <ModuleComponent />
         </div>
