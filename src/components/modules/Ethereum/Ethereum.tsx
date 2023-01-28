@@ -1,5 +1,5 @@
-import { MarketPriceModule } from 'components';
+import { MarketPriceModule } from "components";
 
 export const Ethereum = () => (
-    <MarketPriceModule symbol='ethusdt' label='ETH' />
+  <MarketPriceModule symbol="ethusdt" label="ETH" />
 );

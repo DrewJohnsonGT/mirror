@@ -1,50 +1,64 @@
 {
-    "name": "mirror",
-    "version": "0.0.1",
-    "private": true,
-    "dependencies": {
-        "@testing-library/jest-dom": "^5.11.4",
-        "@testing-library/react": "^11.1.0",
-        "@testing-library/user-event": "^12.1.10",
-        "@types/firebase": "^3.2.1",
-        "@types/jest": "^26.0.15",
-        "@types/node": "^12.0.0",
-        "@types/react": "^17.0.0",
-        "@types/react-dom": "^17.0.0",
-        "@types/react-grid-layout": "^1.3.0",
-        "@types/websocket": "^1.0.4",
-        "autoprefixer": "^10.4.0",
-        "firebase": "^9.5.0",
-        "framer-motion": "^5.3.3",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "react-grid-layout": "^1.3.0",
-        "react-scripts": "next",
-        "tailwindcss": "^2.2.19",
-        "typescript": "^4.1.2",
-        "web-vitals": "^1.0.1",
-        "websocket": "^1.0.34"
-    },
-    "scripts": {
-        "start": "react-scripts start",
-        "build": "react-scripts build"
-    },
-    "eslintConfig": {
-        "extends": [
-            "react-app",
-            "react-app/jest"
-        ]
-    },
-    "browserslist": {
-        "production": [
-            ">0.2%",
-            "not dead",
-            "not op_mini all"
-        ],
-        "development": [
-            "last 1 chrome version",
-            "last 1 firefox version",
-            "last 1 safari version"
-        ]
-    }
+  "name": "mirror",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "firebase": "^9.5.0",
+    "framer-motion": "^5.3.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-grid-layout": "^1.3.0",
+    "react-scripts": "next",
+    "tailwindcss": "^2.2.19",
+    "typescript": "^4.1.2",
+    "web-vitals": "^1.0.1",
+    "websocket": "^1.0.34"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --ext .ts,.tsx src",
+    "format": "prettier --write src/**/*.{ts,tsx}"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@trivago/prettier-plugin-sort-imports": "^4.0.0",
+    "@types/firebase": "^3.2.1",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "@types/react-grid-layout": "^1.3.0",
+    "@types/websocket": "^1.0.4",
+    "eslint": "^8.32.0",
+    "eslint-config-standard-with-typescript": "^33.0.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-n": "^15.6.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-react": "^7.32.1",
+    "eslint-plugin-sort": "^2.4.0",
+    "prettier": "^2.8.3"
+  }
 }
