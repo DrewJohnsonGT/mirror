@@ -1,13 +1,10 @@
-html,
-body,
-#root {
-  rotate: 270deg;
-  height: 100vw;
-  width: 100vh;
-  /* height: 100vh;
-  width: 100vw; */
+html {
+  rotate: 90deg;
   margin: 0;
   padding: 0.25rem;
+  padding-top: 500px;
+  height: 3000px;
+  width: 3000px;
   background-color: black;
   color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

@@ -44,7 +44,7 @@ export const App = () => {
     <GridLayout
       layout={layout}
       onLayoutChange={onLayoutChange}
-      cols={12}
+      cols={40}
       rowHeight={25}
       width={1024}
       isResizable={!!process.env.REACT_APP_IS_DEVELOPMENT}
