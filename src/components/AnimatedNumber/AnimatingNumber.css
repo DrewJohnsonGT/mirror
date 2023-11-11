@@ -1,5 +1,5 @@
 body {
-  @apply bg-gray-800;
+  background-color: #282c34;
 }
 
 .ticker-view {
@@ -52,7 +52,7 @@ body {
   }
 
   50% {
-    @apply text-green-500;
+    color: green;
   }
 }
 
@@ -63,6 +63,6 @@ body {
   }
 
   50% {
-    @apply text-red-500;
+    color: red;
   }
 }

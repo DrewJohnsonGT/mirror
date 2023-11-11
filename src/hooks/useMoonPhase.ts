@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { getMoonImage } from 'images/moon/getMoonImage';
+import { getMoonImage } from 'assets/moon/getMoonImage';
 import { MOON_PHASE_REFRESH_INTERVAL } from 'util/constants';
 
 interface MoonPhase {

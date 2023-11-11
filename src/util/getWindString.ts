@@ -17,6 +17,7 @@ const getDirectionString = (degrees: number) => {
   if (degrees < 348.75) return 'NNW';
   return 'N';
 };
+
 export const getWindString = (
   windSpeed: number,
   windDirectionDegrees: number,

@@ -12,15 +12,15 @@ enum Delta {
 const formatForDisplay = (number: number = 0) =>
   parseFloat(Math.max(number, 0).toString()).toFixed(2).split('').reverse();
 
-function DecimalColumn() {
+const DecimalColumn = () => {
   return (
     <div>
       <span>.</span>
     </div>
   );
-}
+};
 
-function NumberColumn({ delta, digit }: { digit: string; delta: Delta }) {
+const NumberColumn = ({ delta, digit }: { digit: string; delta: Delta }) => {
   const [position, setPosition] = useState(0);
   const [animationClass, setAnimationClass] = useState('');
   const previousDigit = usePrevious(digit);
@@ -47,8 +47,7 @@ function NumberColumn({ delta, digit }: { digit: string; delta: Delta }) {
         className={`ticker-column ${animationClass}`}
         onAnimationComplete={() => {
           setAnimationClass('');
-        }}
-      >
+        }}>
         {[9, 8, 7, 6, 5, 4, 3, 2, 1, 0].map((num) => (
           <div key={num} className="ticker-digit">
             <span>{num}</span>
@@ -58,7 +57,7 @@ function NumberColumn({ delta, digit }: { digit: string; delta: Delta }) {
       <span className="number-placeholder">0</span>
     </div>
   );
-}
+};
 
 export const AnimatingNumber = ({ value }: { value: number }) => {
   const numArray = formatForDisplay(value);

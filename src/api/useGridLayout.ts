@@ -9,7 +9,7 @@ const getLayout = async () => {
   const result: Layout[] = [];
   const querySnapshot = await getDocs(collection(db, GRID_LAYOUT_COLLECTION));
   querySnapshot.forEach((doc) => {
-    const layout = { i: doc.id, ...doc.data() } as Layout;
+    const layout: Layout = { i: doc.id, ...doc.data() };
     result.push(layout);
   });
   return result;

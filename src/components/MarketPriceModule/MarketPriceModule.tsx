@@ -1,6 +1,6 @@
 import { AnimatingNumber } from 'components';
 import { useMarketSymbol } from 'hooks/useMarketSymbol';
-import { BTC, ETH } from 'images';
+import { BTC, ETH } from 'assets';
 import styles from './MarketPriceModule.module.css';
 
 const ICONS = {
