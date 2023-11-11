@@ -24,7 +24,6 @@ export const useMarketSymbol = ({
     )
       .then(async (res) => await res.json())
       .then((price) => {
-        console.log('PRICE', price);
         const priceHigh = price[0]?.price_high;
         setCurrentPrice(parseFloat(priceHigh));
       })
