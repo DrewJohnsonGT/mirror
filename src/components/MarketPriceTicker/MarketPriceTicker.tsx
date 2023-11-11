@@ -1,13 +1,14 @@
+import { BTC, ETH } from 'assets';
 import { AnimatingNumber } from 'components';
 import { useMarketSymbol } from 'hooks/useMarketSymbol';
-import { BTC, ETH } from 'assets';
-import styles from './MarketPriceModule.module.css';
+import styles from './MarketPriceTicker.module.css';
 
 const ICONS = {
   BTC,
   ETH,
 };
-export const MarketPriceModule = ({
+
+export const MarketPriceTicker = ({
   label,
   symbol,
 }: {

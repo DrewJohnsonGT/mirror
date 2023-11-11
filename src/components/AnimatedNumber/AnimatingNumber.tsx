@@ -47,7 +47,8 @@ const NumberColumn = ({ delta, digit }: { digit: string; delta: Delta }) => {
         className={`ticker-column ${animationClass}`}
         onAnimationComplete={() => {
           setAnimationClass('');
-        }}>
+        }}
+      >
         {[9, 8, 7, 6, 5, 4, 3, 2, 1, 0].map((num) => (
           <div key={num} className="ticker-digit">
             <span>{num}</span>

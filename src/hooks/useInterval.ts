@@ -12,7 +12,7 @@ export const useInterval = (callback: () => void, delay: number) => {
       if (typeof savedCallback?.current === 'function') {
         savedCallback.current();
       }
-    }
+    };
     if (delay !== null) {
       const id = setInterval(tick, delay);
       return () => {
@@ -20,7 +20,7 @@ export const useInterval = (callback: () => void, delay: number) => {
       };
     }
   }, [delay]);
-}
+};
 
 export const usePrevious = <Type>(value: Type) => {
   const ref = useRef<Type>();
@@ -30,4 +30,4 @@ export const usePrevious = <Type>(value: Type) => {
   });
 
   return ref.current;
-}
+};

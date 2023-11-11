@@ -13,7 +13,7 @@ interface ToDo {
   content: string;
 }
 
-const ACCESS_TOKEN = process.env.REACT_APP_TODOIST_ACCESS_TOKEN || '';
+const ACCESS_TOKEN = TODOIST_ACCESS_TOKEN;
 
 const PROJECT_ENDPOINT = 'https://api.todoist.com/sync/v9/projects/get_data';
 
@@ -41,6 +41,7 @@ export const useToDo = () => {
         );
       })
       .catch((e) => {
+        console.log('ERROR FETCHING TODOIST');
         console.error(e);
       });
   };

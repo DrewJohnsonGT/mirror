@@ -1,5 +1,11 @@
 import { useEffect, useState } from 'react';
-import { TimeOfDay } from 'types';
+
+export enum TimeOfDay {
+  Morning,
+  Afternoon,
+  Evening,
+  Night,
+}
 
 const REFRESH_RATE = 30000;
 

@@ -6,25 +6,21 @@
   "scripts": {
     "dev": "vite",
     "typecheck": "tsc --noEmit",
-    "lint": "eslint --ext .js,.jsx,.ts,.tsx src",
+    "lint": "eslint --ext .ts,.tsx src",
     "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
     "validate": "npm run typecheck && yarn lint",
     "build": "npm run validate && vite build && cp web.config dist/",
     "preview": "vite preview"
   },
   "dependencies": {
-    "firebase": "^10.6.0",
     "framer-motion": "^10.16.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-grid-layout": "^1.4.3"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
-    "@types/firebase": "^3.2.1",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
-    "@types/react-grid-layout": "^1.3.0",
     "@vitejs/plugin-react": "^4.1.1",
     "eslint": "^8.32.0",
     "eslint-config-standard-with-typescript": "^39.1.1",

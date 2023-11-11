@@ -8,7 +8,8 @@ body {
   display: flex;
   flex-direction: row-reverse;
   overflow: hidden;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-weight: 100;
   position: relative;
   color: white;
 }

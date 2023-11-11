@@ -1,7 +1,6 @@
-export { Bitcoin } from './Bitcoin/Bitcoin';
 export { Compliments } from './Compliments/Compliments';
+export { Crypto } from './Crypto/Crypto';
 export { DateTime } from './DateTime/DateTime';
-export { Ethereum } from './Ethereum/Ethereum';
 export { Forcast } from './Forcast/Forcast';
 export { Moon } from './Moon/Moon';
 export { ToDo } from './ToDo/ToDo';

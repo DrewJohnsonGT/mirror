@@ -50,14 +50,12 @@ interface Forcast {
   precip: number;
 }
 
-const OPEN_WEATHER_API_KEY =
-  process.env.REACT_APP_OPEN_WEATHER_MAP_API_KEY || '';
 const WEATHER_ENDPOINT = 'https://api.openweathermap.org/data/2.5/onecall';
 const INCHES_IN_MM = 0.0393701;
 
 const generateOpenWeatherEndpoint = (base: string, params?: string) =>
   base +
-  `?lon=${LONGITUDE}&lat=${LATITUDE}&units=imperial&exclude=hourly,minutely&appid=${OPEN_WEATHER_API_KEY}${
+  `?lon=${LONGITUDE}&lat=${LATITUDE}&units=imperial&exclude=hourly,minutely&appid=${OPEN_WEATHER_MAP_API_KEY}${
     params ? '&' + params : ''
   }`;
 
@@ -74,6 +72,7 @@ const getAPIData = async (endpoint: string) =>
     .then((data) => data);
 
 const getWeather = (weather: WeatherResponse) => {
+  if (!weather) return {};
   const currentTemperature = formatDisplayTemp(weather.current.temp);
   const feelsLikeTemperature = formatDisplayTemp(weather.current.feels_like);
   const humidy = weather.current.humidity;
@@ -137,6 +136,7 @@ export const useWeather = (): Partial<WeatherResponse> => {
         setRawWeather(res);
       })
       .catch((e) => {
+        console.log('ERROR FETCHING WEATHER');
         console.error(e);
       });
   };

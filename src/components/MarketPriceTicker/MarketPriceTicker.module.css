@@ -8,12 +8,9 @@
   align-items: center;
 }
 
-.label {
-  font-size: 2rem;
-}
-
 .iconContainer {
   flex: 0.5;
+  margin-right: 0.5rem;
   display: flex;
   justify-content: flex-end;
 }
