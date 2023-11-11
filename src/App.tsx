@@ -45,8 +45,6 @@ export const App = () => {
       layout={layout}
       onLayoutChange={onLayoutChange}
       cols={40}
-      rowHeight={25}
-      width={1024}
       isResizable={!!process.env.REACT_APP_IS_DEVELOPMENT}
       allowOverlap={true}>
       {MODULES.map(({ component: ModuleComponent, key }) => (
