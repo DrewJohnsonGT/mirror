@@ -12,8 +12,9 @@ body {
 }
 
 #root {
-  width: 819px;
-  height: 1024px;
+  height: 819px;
+  width: 1024px;
+  border: 1px solid white;
 }
 
 .module-layout {
