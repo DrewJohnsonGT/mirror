@@ -1,8 +1,8 @@
 html,
 body,
 #root {
-  height: 100vw;
-  width: 100vh;
+  height: 100vh;
+  width: 100vw;
   margin: 0;
   background-color: black;
   color: white;
@@ -19,7 +19,7 @@ body,
   grid-template-areas:
     'dt dt .  we we we'
     'dt dt .  fo fo fo'
-    '.  .  .  .  mo mo'
+    '.  .  de de mo mo'
     'oo oo oo oo oo oo'
     'co co co co co co'
     'td td .  .  .  cr '
@@ -27,6 +27,10 @@ body,
   gap: 10px;
   padding: 10px;
   box-sizing: border-box;
+}
+
+.debug {
+  grid-area: de;
 }
 
 .blank {

@@ -50,6 +50,12 @@ export const App = () => {
           <Component />
         </div>
       ))}
+      <div className="debug">
+        <div>
+          <div>Width: {window.innerWidth}</div>
+          <div>Height: {window.innerHeight}</div>
+        </div>
+      </div>
       <div className="blank" />
     </div>
   );
