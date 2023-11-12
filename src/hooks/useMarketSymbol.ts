@@ -1,18 +1,11 @@
 import { useEffect, useState } from 'react';
+import { CRYPTO_REFRESH_RATE } from 'util/constants';
 
-// 30 minutes - API limit 100 daily requests
-const DEFAULT_TICK_RATE = 1000 * 60 * 30;
-
-export const useMarketSymbol = ({
-  symbol,
-  tickRate = DEFAULT_TICK_RATE,
-}: {
-  symbol: string;
-  tickRate?: number;
-}) => {
+export const useMarketSymbol = ({ symbol }: { symbol: string }) => {
   const [currentPrice, setCurrentPrice] = useState(0);
 
   const updatePrice = () => {
+    if (IS_DEVELOPMENT) return;
     fetch(
       `https://rest.coinapi.io/v1/ohlcv/${symbol}/latest?period_id=30MIN&limit=1`,
       {
@@ -36,11 +29,11 @@ export const useMarketSymbol = ({
     updatePrice();
     const interval = setInterval(() => {
       updatePrice();
-    }, tickRate);
+    }, CRYPTO_REFRESH_RATE);
     return () => {
       clearInterval(interval);
     };
-  }, [symbol, tickRate]);
+  }, [symbol]);
 
   return { currentPrice };
 };

@@ -27,8 +27,8 @@ body,
     '.  .  .  .  mo mo'
     'oo oo oo oo oo oo'
     'co co co co co co'
-    'td td td td .  . '
-    'td td td td .  cr';
+    '.  .  .  .  .  . '
+    '.  .  .  .  .  cr';
   gap: 10px;
   padding: 10px;
   box-sizing: border-box;
@@ -44,7 +44,7 @@ body,
 
 .blank {
   grid-area: oo;
-  height: 250px;
+  height: 150px;
 }
 
 .date-time {

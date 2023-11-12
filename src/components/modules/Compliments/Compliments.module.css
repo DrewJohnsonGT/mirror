@@ -1,6 +1,10 @@
 .root {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
   text-align: center;
   font-size: 3rem;
   font-weight: 200;
   text-wrap: wrap;
+  height: 300px;
 }

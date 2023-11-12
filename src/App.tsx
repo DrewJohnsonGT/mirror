@@ -4,7 +4,6 @@ import {
   DateTime,
   Forcast,
   Moon,
-  ToDo,
   Weather,
 } from 'components/modules';
 
@@ -20,10 +19,6 @@ const MODULES = [
   {
     className: 'forecast',
     component: Forcast,
-  },
-  {
-    className: 'todo',
-    component: ToDo,
   },
   {
     className: 'crypto',

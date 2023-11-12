@@ -71,8 +71,17 @@ import waxgib96 from './waxgib96.png';
 import waxgib98 from './waxgib98.png';
 import waxgib99 from './waxgib99.png';
 
-export const getMoonImage = (phase: string, ill: number) => {
-  if (phase === 'wanecres') {
+export enum MoonPhase {
+  NEW_MOON = 'New Moon',
+  WAXING_CRESCENT = 'Waxing Crescent',
+  WAXING_GIBBOUS = 'Waxing Gibbous',
+  FULL_MOON = 'Full Moon',
+  WANING_GIBBOUS = 'Waning Gibbous',
+  WANING_CRESCENT = 'Waning Crescent',
+}
+
+export const getMoonImage = (phase: MoonPhase, ill: number) => {
+  if (phase === MoonPhase.WANING_CRESCENT) {
     if ([0, 1].includes(ill)) return wanecres1;
     if ([2].includes(ill)) return wanecres2;
     if ([3, 4].includes(ill)) return wanecres3;
@@ -93,7 +102,7 @@ export const getMoonImage = (phase: string, ill: number) => {
     if ([45, 46, 47, 48].includes(ill)) return wanecres45;
     if ([49, 50, 51, 52, 53].includes(ill)) return wanecres49;
   }
-  if (phase === 'wanegib') {
+  if (phase === MoonPhase.WANING_GIBBOUS) {
     if ([54, 55].includes(ill)) return wanegib54;
     if ([56, 57, 58, 59].includes(ill)) return wanegib56;
     if ([60, 61, 62, 63, 64, 65, 66].includes(ill)) return wanegib60;
@@ -110,7 +119,7 @@ export const getMoonImage = (phase: string, ill: number) => {
     if ([96, 97].includes(ill)) return wanegib96;
     if ([98, 99, 100].includes(ill)) return wanegib98;
   }
-  if (phase === 'waxcres') {
+  if (phase === MoonPhase.WAXING_CRESCENT) {
     if ([0, 1].includes(ill)) return waxcres1;
     if ([2, 3, 4].includes(ill)) return waxcres2;
     if ([5].includes(ill)) return waxcres5;
@@ -131,7 +140,7 @@ export const getMoonImage = (phase: string, ill: number) => {
     if ([46, 47, 48, 49].includes(ill)) return waxcres46;
     if ([50, 51].includes(ill)) return waxcres50;
   }
-  if (phase === 'waxgib') {
+  if (phase === MoonPhase.WAXING_GIBBOUS) {
     if ([52, 53, 54, 55].includes(ill)) return waxgib52;
     if ([56, 57, 58, 59].includes(ill)) return waxgib56;
     if ([60, 61].includes(ill)) return waxgib60;
@@ -150,7 +159,7 @@ export const getMoonImage = (phase: string, ill: number) => {
     if ([98].includes(ill)) return waxgib98;
     if ([99, 100].includes(ill)) return waxgib99;
   }
-  if (phase === 'fm') {
+  if (phase === MoonPhase.FULL_MOON) {
     return fm;
   }
   return nm;

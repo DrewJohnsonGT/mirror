@@ -1,13 +1,19 @@
 import { useEffect, useState } from 'react';
+import { COMPLIMENTS_REFRESH_RATE } from 'util/constants';
 
-export enum TimeOfDay {
+enum TimeOfDay {
   Morning,
   Afternoon,
   Evening,
   Night,
 }
 
-const REFRESH_RATE = 30000;
+enum TimeOfYear {
+  Spring,
+  Summer,
+  Fall,
+  Winter,
+}
 
 const MORNING = [
   'Good morning my angel',
@@ -31,6 +37,15 @@ const MORNING = [
   'Sun up, sweetie',
 ];
 
+const MORNING_WINTER = [
+  'Merry Morning, my Christmas star! 🌟',
+  'Good morning, my winter wonder! ⛄',
+  'Wake up, my festive joy! 🎄',
+  'Ho Ho Ho! 🎅 Rise and shine, Christmas angel!',
+  'Jingle all the way into the day, beautiful! 🔔',
+  'Good morning, my gift of every day! 🎁',
+];
+
 const AFTERNOON = [
   "What's for lunch good lookin?",
   "I'm grateful to know you",
@@ -40,6 +55,15 @@ const AFTERNOON = [
   "You're more helpful than you realize",
   "You're killing it büb",
 ];
+
+const AFTER_NOON_WINTER = [
+  'Sparkling as bright as Christmas lights at noon!',
+  "You're as sweet as a Christmas cookie, hope your day is too!",
+  'Feeling festive yet, gorgeous? 🎄',
+  "You're the warmth in this winter afternoon!",
+  'Your smile is as cozy as a Christmas hug!',
+];
+
 const EVENING = [
   'Wow, you look hot!',
   'You look nice!',
@@ -53,6 +77,15 @@ const EVENING = [
   "On a scale from 1 to 10, you're an 11.5",
   'You are strong 💪',
 ];
+
+const EVENING_WINTER = [
+  'Evening greetings to my Christmas delight!',
+  'You glow brighter than the Christmas tree lights!',
+  'Hope your evening is as joyful as a Christmas carol!',
+  'You make every evening merry and bright!',
+  'All is calm, all is bright, especially with you tonight!',
+];
+
 const NIGHT = [
   'Goodnight gorgeous',
   'Night Night',
@@ -60,9 +93,18 @@ const NIGHT = [
   'Have good sleeps',
   'Sweet dreams sexy',
 ];
+
+const NIGHT_WINTER = [
+  'Goodnight, my silent night beauty!',
+  'Dream of sugarplums, my sweet!',
+  'May your night be as peaceful as a Christmas Eve! 🎄',
+  'Sleep in heavenly peace, love.',
+  'Sweet Christmas dreams, my love. 🎄',
+];
+
 const ANYTIME = [
   "You're an awesome friend",
-  "You're a gift to those around you",
+  "You're a gift to those around you 🎁",
   "You're a smart cookie 🧠",
   'You are awesome!',
   'You have impeccable manners',
@@ -83,6 +125,13 @@ const ANYTIME = [
   'Hello boob',
   'Hi bübels',
   'Hi büb',
+  // XMAS
+  "You're as magical as a Christmas miracle! 🎄",
+  'Your heart is as full as a Christmas stocking!',
+  'You sparkle like snowflakes in the sun! ❄️❄️❄️',
+  "You're the reason for the season's joy!",
+  'Your spirit is as festive as Christmas itself!',
+  "You're the jingle to my bells! 🔔",
 ];
 
 const getTimeOfDay = () => {
@@ -99,6 +148,20 @@ const getTimeOfDay = () => {
   return TimeOfDay.Night;
 };
 
+const getTimeOfYear = () => {
+  const month = new Date().getMonth();
+  if (month >= 11 || month <= 1) {
+    return TimeOfYear.Winter;
+  }
+  if (month >= 2 && month <= 4) {
+    return TimeOfYear.Spring;
+  }
+  if (month >= 5 && month <= 7) {
+    return TimeOfYear.Summer;
+  }
+  return TimeOfYear.Fall;
+};
+
 const randomValue = (arr: string[]) =>
   arr[Math.floor(Math.random() * arr.length)];
 
@@ -108,10 +171,22 @@ const timeMap = {
   [TimeOfDay.Evening]: EVENING,
   [TimeOfDay.Night]: NIGHT,
 };
+
+const winterTimeMap = {
+  [TimeOfDay.Morning]: MORNING_WINTER,
+  [TimeOfDay.Afternoon]: AFTER_NOON_WINTER,
+  [TimeOfDay.Evening]: EVENING_WINTER,
+  [TimeOfDay.Night]: NIGHT_WINTER,
+};
+
 const getCompliment = (timeOfDay: TimeOfDay) => {
   if (Math.random() < 0.25) return randomValue(ANYTIME);
+  if (getTimeOfYear() === TimeOfYear.Winter && Math.random() < 0.25) {
+    return randomValue(winterTimeMap[timeOfDay]);
+  }
   return randomValue(timeMap[timeOfDay]);
 };
+
 export const useCompliments = () => {
   const [compliment, setCompliment] = useState('');
   useEffect(() => {
@@ -120,7 +195,7 @@ export const useCompliments = () => {
     setInterval(() => {
       const timeOfDay = getTimeOfDay();
       setCompliment(getCompliment(timeOfDay));
-    }, REFRESH_RATE);
+    }, COMPLIMENTS_REFRESH_RATE);
   }, []);
   return { compliment };
 };

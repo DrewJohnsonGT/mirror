@@ -1,28 +1,26 @@
 import { useEffect, useState } from 'react';
-import { getMoonImage } from 'assets/moon/getMoonImage';
+import { getMoonImage, MoonPhase } from 'assets/moon/getMoonImage';
 import { MOON_PHASE_REFRESH_INTERVAL } from 'util/constants';
-
-interface MoonPhase {
-  currentCycleDays: number;
-  illuminationPercent: number;
-}
 
 const MS_IN_DAY = 24 * 60 * 60 * 1000;
 const LUNAR_CYCLE_DAYS = 29.53058770576;
 const FULL_MOON_YEAR_2000_TS = 947182440000;
 const FULL_MOON = 14.8;
 
-const getMoonPhaseString = (cycleDays: number) => {
-  if (cycleDays < 1) return 'nm';
-  if (cycleDays < 8.38264692644) return 'waxcres';
-  if (cycleDays < 13.76529385288) return 'waxgib';
-  if (cycleDays < 15.76529385288) return 'fm';
-  if (cycleDays < 21.14794077932) return 'wanegib';
-  if (cycleDays < 28.53058770576) return 'wanecres';
-  return 'nm';
+const getMoonPhaseString = (cycleDays: number): MoonPhase => {
+  if (cycleDays < 1) return MoonPhase.NEW_MOON;
+  if (cycleDays < 8.38264692644) return MoonPhase.WAXING_CRESCENT;
+  if (cycleDays < 13.76529385288) return MoonPhase.WAXING_GIBBOUS;
+  if (cycleDays < 15.76529385288) return MoonPhase.FULL_MOON;
+  if (cycleDays < 21.14794077932) return MoonPhase.WANING_GIBBOUS;
+  if (cycleDays < 28.53058770576) return MoonPhase.WANING_CRESCENT;
+  return MoonPhase.NEW_MOON;
 };
 
-const getMoonPhase = (): MoonPhase => {
+const getMoonPhase = (): {
+  currentCycleDays: number;
+  illuminationPercent: number;
+} => {
   // seconds in lunar cycle
   const lunarSeconds = LUNAR_CYCLE_DAYS * 60 * 60 * 24 * 1000;
   const currentTimestamp = Date.now();
@@ -47,13 +45,16 @@ const getNextFullMoon = (currentCycleDays: number) => {
 export const useMoonPhase = () => {
   const [moonImage, setMoonImage] = useState('');
   const [nextFullMoon, setNextFullMoon] = useState<Date>();
+  const [moonPhase, setMoonPhase] = useState<MoonPhase>(MoonPhase.NEW_MOON);
 
   const updateMoonImage = () => {
     const { currentCycleDays, illuminationPercent } = getMoonPhase();
     const moonPhaseString = getMoonPhaseString(currentCycleDays);
-    const roundedIlluminationPercent = Math.round(illuminationPercent * 100);
+    const roundedIlluminationPercent =
+      100 - Math.round(illuminationPercent * 100);
     setMoonImage(getMoonImage(moonPhaseString, roundedIlluminationPercent));
     setNextFullMoon(getNextFullMoon(currentCycleDays));
+    setMoonPhase(moonPhaseString);
   };
 
   useEffect(() => {
@@ -62,5 +63,5 @@ export const useMoonPhase = () => {
       updateMoonImage();
     }, MOON_PHASE_REFRESH_INTERVAL);
   }, []);
-  return { moonImage, nextFullMoon };
+  return { moonImage, moonPhase, nextFullMoon };
 };
