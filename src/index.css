@@ -13,11 +13,11 @@ body,
 }
 
 .module-layout {
-  margin-top: -5.5rem;
-  margin-left: 7rem;
+  margin-top: -7.5rem;
+  margin-left: 7.5rem;
   rotate: 90deg;
-  height: 1000px;
-  width: 810px;
+  height: 1250px;
+  width: 1012.5px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
