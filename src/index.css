@@ -1,8 +1,5 @@
 html,
-body,
-#root {
-  height: 1024px;
-  width: 819px;
+body {
   margin: 0;
   background-color: black;
   color: white;
@@ -10,7 +7,13 @@ body,
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   box-sizing: border-box;
-  border: 1px solid white;
+  width: 100vw;
+  height: 100vh;
+}
+
+#root {
+  width: 819px;
+  height: 1024px;
 }
 
 .module-layout {
