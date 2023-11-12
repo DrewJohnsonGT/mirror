@@ -13,7 +13,7 @@ body,
 }
 
 .module-layout {
-  margin-top: -5.75rem;
+  margin-top: -5.5rem;
   margin-left: 7rem;
   rotate: 90deg;
   height: 1000px;
@@ -23,16 +23,20 @@ body,
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
   grid-template-areas:
-    'dt dt .  we we we'
-    'dt dt .  fo fo fo'
-    '.  .  de de mo mo'
+    'dt dt dt we we we'
+    'dt dt dt fo fo fo'
+    '.  .  .  .  mo mo'
     'oo oo oo oo oo oo'
     'co co co co co co'
-    'td td .  .  .  cr '
-    'td td .  .  .  cr';
+    'td td td td .  cr '
+    'td td td td .  cr';
   gap: 10px;
   padding: 10px;
   box-sizing: border-box;
+}
+
+.grid-item {
+  min-height: 100px;
 }
 
 .debug {

@@ -1,16 +1,23 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .hr {
   color: white;
   font-weight: bold;
   opacity: 0.25;
+  width: 250px;
+  margin-right: auto;
   margin-bottom: 0.5rem;
 }
 
 .todo {
-  font-size: 1.25rem;
+  font-size: 1rem;
   margin-bottom: 0.25rem;
   font-weight: 100;
 }

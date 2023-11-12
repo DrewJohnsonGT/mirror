@@ -4,9 +4,11 @@ import styles from './ToDo.module.css';
 export const ToDo = () => {
   const { todos } = useToDo();
   return (
-    <div>
+    <div className={styles.root}>
       <div className={styles.header}>To-Do</div>
-      <hr className={styles.hr} />
+      <div className={styles.hr}>
+        <hr />
+      </div>
       <div className={styles.todos}>
         {todos.map((todo) => (
           <div className={styles.todo} key={todo.id}>

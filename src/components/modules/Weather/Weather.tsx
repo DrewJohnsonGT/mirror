@@ -33,28 +33,26 @@ export const Weather = () => {
           <div className={styles.low}>{todaysLow}</div>
         </div>
       </div>
-      <div className={styles.sub}>
-        <div className={styles.otherInfo}>
-          <div className={styles.row}>
-            <div>Feels Like</div>
-            <div>{feelsLikeTemperature}°</div>
-          </div>
-          <div className={styles.row}>
-            <div>Humidity</div>
-            <div>{humidy}%</div>
-          </div>
-          <div className={styles.row}>
-            <div>Sunrise</div>
-            <div>{sunrise}</div>
-          </div>
-          <div className={styles.row}>
-            <div>Sunset</div>
-            <div>{sunset}</div>
-          </div>
-          <div className={styles.row}>
-            <div>Wind</div>
-            <div>{wind}</div>
-          </div>
+      <div className={styles.otherInfo}>
+        <div className={styles.row}>
+          <div>Feels Like</div>
+          <div>{feelsLikeTemperature}°</div>
+        </div>
+        <div className={styles.row}>
+          <div>Humidity</div>
+          <div>{humidy}%</div>
+        </div>
+        <div className={styles.row}>
+          <div>Sunrise</div>
+          <div>{sunrise}</div>
+        </div>
+        <div className={styles.row}>
+          <div>Sunset</div>
+          <div>{sunset}</div>
+        </div>
+        <div className={styles.row}>
+          <div>Wind</div>
+          <div>{wind}</div>
         </div>
       </div>
     </div>

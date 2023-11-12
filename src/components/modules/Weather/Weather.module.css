@@ -1,6 +1,6 @@
 .root {
   display: grid;
-  grid-template-columns: 0.75fr 0.5fr 0.75fr;
+  grid-template-columns: 0.75fr 1fr 1.25fr;
 }
 
 .overview {
@@ -14,27 +14,34 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-right: 1.75rem;
-  margin-top: -0.5rem;
 }
 
-.sub {
-  margin-bottom: auto;
+.otherInfo {
+  font-size: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   font-weight: 100;
+  gap: 10px;
 }
 
 .imageDiv {
-  width: 150px;
-  height: 150px;
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+  display: inline-block;
 }
 
 .image {
-  margin-top: -25px;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 
 .degree {
@@ -47,14 +54,8 @@
   display: flex;
   justify-content: center;
   font-weight: 100;
-  font-size: 6rem;
-  line-height: 6rem;
-}
-
-.otherInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  font-size: 4rem;
+  line-height: 4rem;
 }
 
 .description {
