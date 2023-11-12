@@ -8,8 +8,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <div style={{ rotate: !IS_DEVELOPMENT ? '90deg' : '0deg' }}>
-      <App />
-    </div>
+    <App />
   </React.StrictMode>,
 );
