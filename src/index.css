@@ -14,7 +14,7 @@ body,
 
 .module-layout {
   margin-top: -7.25rem;
-  margin-left: 8rem;
+  margin-left: 10rem;
   border: 1px solid white;
   rotate: 90deg;
   height: 1250px;
@@ -32,6 +32,7 @@ body,
     '.  .  .  .  .  cr';
   gap: 10px;
   padding: 20px;
+  padding-bottom: 0;
   box-sizing: border-box;
 }
 
