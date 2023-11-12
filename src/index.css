@@ -18,7 +18,6 @@ body,
   rotate: 90deg;
   height: 1000px;
   width: 810px;
-  border: 1px solid white;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: auto;
@@ -28,7 +27,7 @@ body,
     '.  .  .  .  mo mo'
     'oo oo oo oo oo oo'
     'co co co co co co'
-    'td td td td .  cr '
+    'td td td td .  . '
     'td td td td .  cr';
   gap: 10px;
   padding: 10px;

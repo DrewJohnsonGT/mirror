@@ -24,7 +24,7 @@ export const useMarketSymbol = ({
       .then(async (res) => await res.json())
       .then((price) => {
         const priceHigh = price[0]?.price_high;
-        setCurrentPrice(parseInt(priceHigh));
+        priceHigh && setCurrentPrice(parseInt(priceHigh));
       })
       .catch((e) => {
         console.log('ERROR FETCHING CRYPTO');
