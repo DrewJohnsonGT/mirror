@@ -40,11 +40,11 @@ const MODULES = [
 export const App = () => {
   return (
     <div className="module-layout">
-      {MODULES.map(({ className, component: Component }) => (
+      {/* {MODULES.map(({ className, component: Component }) => (
         <div className={className} key={className}>
           <Component />
         </div>
-      ))}
+      ))} */}
       <div className="blank" />
     </div>
   );
