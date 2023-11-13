@@ -26,12 +26,12 @@
 }
 
 .low {
-  font-weight: 100;
+  font-weight: 300;
   color: darkgray;
 }
 
 .precip {
-  font-weight: 100;
+  font-weight: 300;
   font-size: 0.75rem;
   margin-top: -0.25rem;
 }
