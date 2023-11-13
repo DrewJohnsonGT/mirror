@@ -19,6 +19,7 @@ export default defineConfig(({ mode }) => {
       WEATHER_BIT_API_KEY: JSON.stringify(env.WEATHER_BIT_API_KEY),
       TODOIST_ACCESS_TOKEN: JSON.stringify(env.TODOIST_ACCESS_TOKEN),
       CRYPTO_API_KEY: JSON.stringify(env.CRYPTO_API_KEY),
+      NEWS_API_KEY: JSON.stringify(env.NEWS_API_KEY),
     },
   };
 });

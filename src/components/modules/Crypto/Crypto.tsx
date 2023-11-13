@@ -1,4 +1,4 @@
-import { MarketPriceTicker } from 'components';
+import { MarketPriceTicker } from './MarketPriceTicker/MarketPriceTicker';
 
 export const Crypto = () => (
   <div>

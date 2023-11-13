@@ -4,6 +4,7 @@ import {
   DateTime,
   Forcast,
   Moon,
+  News,
   Weather,
 } from 'components/modules';
 
@@ -31,6 +32,10 @@ const MODULES = [
   {
     className: 'compliments',
     component: Compliments,
+  },
+  {
+    className: 'news',
+    component: News,
   },
   {
     className: 'blank',

@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+}
+
+.image {
+  width: 150px;
+  opacity: 0.5;
+}
+
+.title {
+  font-size: 0.85rem;
+  font-weight: 100;
+  margin-left: 0.5rem;
+}

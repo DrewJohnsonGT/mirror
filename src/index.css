@@ -28,7 +28,7 @@ body,
     'oo oo oo oo oo oo'
     '.  .  .  .  .  . '
     'co co co co co co'
-    '.  .  .  .  .  cr';
+    'ne ne .  .  .  cr';
   gap: 10px;
   padding: 25px;
   box-sizing: border-box;
@@ -75,4 +75,10 @@ body,
 
 .compliments {
   grid-area: co;
+}
+
+.news {
+  display: flex;
+  align-items: flex-end;
+  grid-area: ne;
 }
