@@ -1,5 +1,4 @@
 import { BTC, ETH } from 'assets';
-import { AnimatingNumber } from 'components';
 import { useMarketSymbol } from 'hooks/useMarketSymbol';
 import styles from './MarketPriceTicker.module.css';
 
@@ -24,9 +23,7 @@ export const MarketPriceTicker = ({
         <div className={styles.iconContainer}>
           <img src={ICONS[label]} className={styles.icon} alt={label} />
         </div>
-        <div className={styles.price}>
-          <AnimatingNumber value={currentPrice} />
-        </div>
+        <div className={styles.price}>$ {currentPrice}</div>
       </div>
     </div>
   );
