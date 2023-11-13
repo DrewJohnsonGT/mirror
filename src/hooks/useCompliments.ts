@@ -181,7 +181,7 @@ const winterTimeMap = {
 
 const getCompliment = (timeOfDay: TimeOfDay) => {
   if (Math.random() < 0.25) return randomValue(ANYTIME);
-  if (getTimeOfYear() === TimeOfYear.Winter && Math.random() < 0.25) {
+  if (getTimeOfYear() === TimeOfYear.Winter && Math.random() < 0.5) {
     return randomValue(winterTimeMap[timeOfDay]);
   }
   return randomValue(timeMap[timeOfDay]);

@@ -80,5 +80,6 @@ body,
 .news {
   display: flex;
   align-items: flex-end;
+  height: 200px;
   grid-area: ne;
 }

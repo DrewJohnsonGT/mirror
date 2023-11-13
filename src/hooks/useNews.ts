@@ -7,6 +7,9 @@ interface News {
   url: string;
   urlToImage: string;
   author: string;
+  source: {
+    name: string;
+  };
 }
 
 export const useNews = () => {

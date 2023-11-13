@@ -2,6 +2,12 @@
   display: flex;
 }
 
+.imageDiv {
+  width: 150px;
+  overflow: hidden;
+  display: inline-block;
+}
+
 .image {
   width: 150px;
   opacity: 0.5;
@@ -11,4 +17,9 @@
   font-size: 0.85rem;
   font-weight: 100;
   margin-left: 0.5rem;
+}
+
+.source {
+  font-size: 0.75rem;
+  font-weight: 100;
 }
