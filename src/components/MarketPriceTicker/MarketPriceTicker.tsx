@@ -17,13 +17,17 @@ export const MarketPriceTicker = ({
   const { currentPrice } = useMarketSymbol({
     symbol,
   });
+  const formattedCurrentPrice = Intl.NumberFormat('en-US', {
+    currency: 'USD',
+    style: 'currency',
+  }).format(currentPrice);
   return (
     <div className={styles.root}>
       <div className={styles.data}>
         <div className={styles.iconContainer}>
           <img src={ICONS[label]} className={styles.icon} alt={label} />
         </div>
-        <div className={styles.price}>$ {currentPrice}</div>
+        <div className={styles.price}>{formattedCurrentPrice}</div>
       </div>
     </div>
   );
