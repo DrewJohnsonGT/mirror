@@ -27,11 +27,11 @@ export const useMarketSymbol = ({ symbol }: { symbol: string }) => {
 
   useEffect(() => {
     updatePrice();
-    const interval = setInterval(() => {
+    const marketSymbolInterval = setInterval(() => {
       updatePrice();
     }, CRYPTO_REFRESH_RATE);
     return () => {
-      clearInterval(interval);
+      clearInterval(marketSymbolInterval);
     };
   }, []);
 

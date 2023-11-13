@@ -47,9 +47,12 @@ export const useToDo = () => {
   };
   useEffect(() => {
     updateProject();
-    setInterval(() => {
+    const todoInterval = setInterval(() => {
       updateProject();
     }, TODO_REFRESH_RATE);
+    return () => {
+      clearInterval(todoInterval);
+    };
   }, []);
 
   return { todos: todos || [] };

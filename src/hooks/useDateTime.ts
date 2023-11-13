@@ -8,9 +8,12 @@ const formatSeconds = (seconds: number) =>
 export const useDateTime = () => {
   const [timestamp, setTimestamp] = useState(Date.now());
   useEffect(() => {
-    setInterval(() => {
+    const timeInterval = setInterval(() => {
       setTimestamp(Date.now());
     }, ONE_SECOND_IN_MS);
+    return () => {
+      clearInterval(timeInterval);
+    };
   });
   const date = new Date(timestamp);
   const dateString = date.toLocaleDateString([], {

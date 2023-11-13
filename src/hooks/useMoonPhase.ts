@@ -59,9 +59,12 @@ export const useMoonPhase = () => {
 
   useEffect(() => {
     updateMoonImage();
-    setInterval(() => {
+    const moonPhaseInterval = setInterval(() => {
       updateMoonImage();
     }, MOON_PHASE_REFRESH_INTERVAL);
+    return () => {
+      clearInterval(moonPhaseInterval);
+    };
   }, []);
   return { moonImage, moonPhase, nextFullMoon };
 };

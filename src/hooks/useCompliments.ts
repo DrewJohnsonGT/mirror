@@ -192,10 +192,13 @@ export const useCompliments = () => {
   useEffect(() => {
     const timeOfDay = getTimeOfDay();
     setCompliment(getCompliment(timeOfDay));
-    setInterval(() => {
+    const complimentsInterval = setInterval(() => {
       const timeOfDay = getTimeOfDay();
       setCompliment(getCompliment(timeOfDay));
     }, COMPLIMENTS_REFRESH_RATE);
+    return () => {
+      clearInterval(complimentsInterval);
+    };
   }, []);
   return { compliment };
 };

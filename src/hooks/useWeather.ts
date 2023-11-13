@@ -143,9 +143,13 @@ export const useWeather = (): Partial<WeatherResponse> => {
 
   useEffect(() => {
     updateWeather();
-    setInterval(() => {
+    const weatherInterval = setInterval(() => {
       updateWeather();
     }, WEATHER_REFRESH_RATE);
+
+    return () => {
+      clearInterval(weatherInterval);
+    };
   }, []);
   if (!rawWeather) return {};
   const weather = getWeather(rawWeather);
