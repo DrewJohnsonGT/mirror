@@ -11,7 +11,9 @@ export default async function handler(
     console.log('FETCHED CRYPTO');
     console.log(symbol);
     fetch(
-      `https://rest.coinapi.io/v1/ohlcv/${symbol}/latest?period_id=30MIN&limit=1`,
+      `https://rest.coinapi.io/v1/ohlcv/${String(
+        symbol,
+      )}/latest?period_id=30MIN&limit=1`,
       {
         headers: {
           'X-CoinAPI-Key': process.env.CRYPTO_API_KEY,
