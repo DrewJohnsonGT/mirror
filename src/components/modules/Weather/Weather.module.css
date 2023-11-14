@@ -26,7 +26,6 @@
 .row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  font-weight: 100;
   gap: 10px;
 }
 
@@ -74,13 +73,11 @@
 
 .high {
   text-align: center;
-  font-weight: 300;
   flex: 1;
 }
 
 .low {
   flex: 1;
   text-align: center;
-  font-weight: 100;
   color: darkgray;
 }

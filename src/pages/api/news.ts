@@ -6,8 +6,7 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   if (req.method === 'GET') {
-    if (process.env.DEV) return;
-    console.log('FETCHED NEWS');
+    if (process.env.DEV) res.status(200).json({ articles: [] });
     fetch(
       `https://newsapi.org/v2/top-headlines?language=en&sortBy=popularity&apiKey=${process.env.NEWS_API_KEY}`,
     )

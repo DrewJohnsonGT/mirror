@@ -1,25 +1,18 @@
 .root {
   display: flex;
-}
-
-.imageDiv {
-  maxwidth: 250px;
-  overflow: hidden;
-  display: inline-block;
+  align-items: flex-end;
 }
 
 .image {
-  width: 150px;
-  opacity: 0.5;
+  height: 150px;
+  width: 500px;
+  opacity: 0.9;
 }
 
 .title {
-  font-size: 0.85rem;
-  font-weight: 100;
   margin-left: 0.5rem;
 }
 
 .source {
   font-size: 0.75rem;
-  font-weight: 100;
 }

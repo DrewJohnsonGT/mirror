@@ -6,10 +6,8 @@ export default async function handler(
   res: NextApiResponse,
 ) {
   if (req.method === 'GET') {
-    if (process.env.DEV) return;
+    if (process.env.DEV) res.status(200).json({ price_high: 0 });
     const symbol = req.query.symbol;
-    console.log('FETCHED CRYPTO');
-    console.log(symbol);
     fetch(
       `https://rest.coinapi.io/v1/ohlcv/${String(
         symbol,

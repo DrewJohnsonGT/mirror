@@ -18,10 +18,12 @@
 .seconds {
   color: rgb(187, 187, 187);
   font-size: 1.75rem;
+  font-weight: 300;
   width: 2.5rem;
 }
 
 .abbreviation {
   color: rgb(187, 187, 187);
   font-size: 1.75rem;
+  font-weight: 300;
 }
