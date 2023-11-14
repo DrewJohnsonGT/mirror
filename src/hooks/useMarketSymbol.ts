@@ -5,19 +5,10 @@ export const useMarketSymbol = ({ symbol }: { symbol: string }) => {
   const [currentPrice, setCurrentPrice] = useState(0);
 
   const updatePrice = () => {
-    if (IS_DEVELOPMENT) return;
-    fetch(
-      `https://rest.coinapi.io/v1/ohlcv/${symbol}/latest?period_id=30MIN&limit=1`,
-      {
-        headers: {
-          'X-CoinAPI-Key': CRYPTO_API_KEY,
-        },
-      },
-    )
+    fetch('/api/crypto?symbol=' + symbol)
       .then(async (res) => await res.json())
       .then((price) => {
-        const priceHigh = price[0]?.price_high;
-        priceHigh && setCurrentPrice(parseInt(priceHigh));
+        setCurrentPrice(parseInt(price));
       })
       .catch((e) => {
         console.log('ERROR FETCHING CRYPTO');

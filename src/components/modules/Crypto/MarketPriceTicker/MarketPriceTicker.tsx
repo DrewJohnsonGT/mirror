@@ -1,18 +1,12 @@
-import { BTC, ETH } from 'assets';
 import { useMarketSymbol } from 'hooks/useMarketSymbol';
 import styles from './MarketPriceTicker.module.css';
 
-const ICONS = {
-  BTC,
-  ETH,
-};
-
 export const MarketPriceTicker = ({
-  label,
+  iconImage,
   symbol,
 }: {
   symbol: string;
-  label: keyof typeof ICONS;
+  iconImage: string;
 }) => {
   const { currentPrice } = useMarketSymbol({
     symbol,
@@ -25,7 +19,7 @@ export const MarketPriceTicker = ({
     <div className={styles.root}>
       <div className={styles.data}>
         <div className={styles.iconContainer}>
-          <img src={ICONS[label]} className={styles.icon} alt={label} />
+          <img src={iconImage} className={styles.icon} alt={iconImage} />
         </div>
         <div className={styles.price}>{formattedCurrentPrice}</div>
       </div>

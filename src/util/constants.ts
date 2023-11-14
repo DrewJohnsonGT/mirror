@@ -1,5 +1,3 @@
-export const LATITUDE = '39.329239';
-export const LONGITUDE = '-82.101257';
 export const COMPLIMENTS_REFRESH_RATE = 1000 * 30; // 30 seconds
 export const WEATHER_REFRESH_RATE = 1000 * 60 * 15; // 15 minutes
 export const TODO_REFRESH_RATE = 1000 * 60 * 5; // 5 minutes

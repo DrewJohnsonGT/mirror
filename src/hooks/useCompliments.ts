@@ -117,11 +117,13 @@ const ANYTIME = [
   "You're even more beautiful on the inside than you are on the outside 😉",
   'You have the courage of your convictions',
   "I'm inspired by you",
+  'Wow the mirror actually works 🤪',
   "You're like a ray of sunshine on a really dreary day",
   'You are making a difference',
   'Thank you for being there for me',
   'You bring out the best in other people',
   'Hi boob',
+  '😇',
   'Hello boob',
   'Hi bübels',
   'Hi büb',
@@ -135,11 +137,11 @@ const ANYTIME = [
 ];
 
 const getTimeOfDay = () => {
-  const hour = new Date().getHours() + 1;
+  const hour = new Date().getHours();
   if (hour < 12 && hour > 2) {
     return TimeOfDay.Morning;
   }
-  if (hour > 12 && hour < 17) {
+  if (hour >= 12 && hour < 17) {
     return TimeOfDay.Afternoon;
   }
   if (hour >= 17 && hour <= 21) {

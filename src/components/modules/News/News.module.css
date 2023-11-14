@@ -3,7 +3,7 @@
 }
 
 .imageDiv {
-  width: 150px;
+  maxwidth: 250px;
   overflow: hidden;
   display: inline-block;
 }

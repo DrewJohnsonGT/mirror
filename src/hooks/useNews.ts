@@ -17,9 +17,7 @@ export const useNews = () => {
   const [currentNewsItemIndex, setCurrentNewsItemIndex] = useState(0);
 
   const updateNews = () => {
-    fetch(
-      `https://newsapi.org/v2/top-headlines?language=en&sortBy=popularity&apiKey=${NEWS_API_KEY}`,
-    )
+    fetch('/api/news')
       .then(async (res) => await res.json())
       .then((newsResponse) => {
         const articles = newsResponse.articles;

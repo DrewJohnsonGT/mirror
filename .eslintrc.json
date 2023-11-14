@@ -42,7 +42,8 @@
     "multiline-ternary": "off",
     "tss-unused-classes/unused-classes": "warn",
     "max-lines": ["error", 300],
-    "@typescript-eslint/naming-convention": "off"
+    "@typescript-eslint/naming-convention": "off",
+    "@typescript-eslint/space-before-function-paren": "off"
   },
-  "ignorePatterns": ["vite.config.ts", "vite-env.d.ts"]
+  "ignorePatterns": ["next.config.js", "next-env.d.ts", "public/*"]
 }

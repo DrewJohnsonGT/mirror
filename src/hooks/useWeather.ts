@@ -1,10 +1,5 @@
 import { useEffect, useState } from 'react';
-import {
-  LATITUDE,
-  LONGITUDE,
-  WEATHER_REFRESH_RATE,
-  WEEKDAYS,
-} from 'util/constants';
+import { WEATHER_REFRESH_RATE, WEEKDAYS } from 'util/constants';
 import {
   formatDisplayTemp,
   formatDisplayTime,
@@ -16,6 +11,7 @@ interface Weather {
   icon: string;
   main: string;
 }
+
 interface RawForcast {
   dt: number;
   temp: {
@@ -26,7 +22,7 @@ interface RawForcast {
   snow?: number;
   rain?: number;
 }
-interface WeatherResponse {
+interface RawWeatherResponse {
   current: {
     temp: number;
     feels_like: number;
@@ -50,14 +46,21 @@ interface Forcast {
   precip: number;
 }
 
-const WEATHER_ENDPOINT = 'https://api.openweathermap.org/data/2.5/onecall';
-const INCHES_IN_MM = 0.0393701;
+interface WeatherResponse {
+  currentTemperature: string;
+  feelsLikeTemperature: string;
+  sunrise: string;
+  sunset: string;
+  description: string;
+  iconLink: string;
+  humidy: number;
+  forcast: Forcast[];
+  todaysHigh: string;
+  todaysLow: string;
+  wind: string;
+}
 
-const generateOpenWeatherEndpoint = (base: string, params?: string) =>
-  base +
-  `?lon=${LONGITUDE}&lat=${LATITUDE}&units=imperial&exclude=hourly,minutely&appid=${OPEN_WEATHER_MAP_API_KEY}${
-    params ? '&' + params : ''
-  }`;
+const INCHES_IN_MM = 0.0393701;
 
 const generateIconLink = (icon?: string, multiplier?: number) =>
   icon
@@ -66,12 +69,12 @@ const generateIconLink = (icon?: string, multiplier?: number) =>
       }.png`
     : '';
 
-const getAPIData = async (endpoint: string) =>
-  await fetch(endpoint)
+const getAPIData = async () =>
+  await fetch('/api/weather')
     .then(async (res) => await res.json())
     .then((data) => data);
 
-const getWeather = (weather: WeatherResponse) => {
+const getWeather = (weather: RawWeatherResponse) => {
   if (!weather) return {};
   const currentTemperature = formatDisplayTemp(weather.current.temp);
   const feelsLikeTemperature = formatDisplayTemp(weather.current.feels_like);
@@ -114,25 +117,13 @@ const getForcast = (dailyForcast: RawForcast[]): Forcast[] => {
   });
 };
 
-interface WeatherResponse {
-  currentTemperature: string;
-  feelsLikeTemperature: string;
-  sunrise: string;
-  sunset: string;
-  description: string;
-  iconLink: string;
-  humidy: number;
-  forcast: Forcast[];
-  todaysHigh: string;
-  todaysLow: string;
-  wind: string;
-}
-
 export const useWeather = (): Partial<WeatherResponse> => {
-  const [rawWeather, setRawWeather] = useState<WeatherResponse>();
+  const [rawWeather, setRawWeather] = useState<RawWeatherResponse>();
   const updateWeather = () => {
-    getAPIData(generateOpenWeatherEndpoint(WEATHER_ENDPOINT))
-      .then((res: WeatherResponse) => {
+    getAPIData()
+      .then((res: RawWeatherResponse) => {
+        console.log('FETCHED WEATHER');
+        console.log(res);
         setRawWeather(res);
       })
       .catch((e) => {

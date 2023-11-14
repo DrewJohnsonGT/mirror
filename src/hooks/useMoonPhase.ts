@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { getMoonImage, MoonPhase } from 'assets/moon/getMoonImage';
 import { MOON_PHASE_REFRESH_INTERVAL } from 'util/constants';
+import { getMoonImage, MoonPhase } from 'util/getMoonImage';
 
 const MS_IN_DAY = 24 * 60 * 60 * 1000;
 const LUNAR_CYCLE_DAYS = 29.53058770576;

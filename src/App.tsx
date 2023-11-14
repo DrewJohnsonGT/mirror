@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Compliments,
   Crypto,
@@ -7,6 +8,7 @@ import {
   News,
   Weather,
 } from 'components/modules';
+import './index.css';
 
 const MODULES = [
   {
@@ -42,7 +44,7 @@ const MODULES = [
     component: () => <div />,
   },
 ];
-export const App = () => {
+const App = () => {
   return (
     <div className="module-layout">
       {MODULES.map(({ className, component: Component }) => (
@@ -54,3 +56,5 @@ export const App = () => {
     </div>
   );
 };
+
+export default App;
