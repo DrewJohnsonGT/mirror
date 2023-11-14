@@ -12,10 +12,12 @@ export const News = () => {
           className={styles.image}
         />
       )}
-      <div className={styles.title}>
-        <div className={styles.source}>{news?.source.name}:</div>
-        {news?.title}
-      </div>
+      {news?.title && (
+        <div className={styles.title}>
+          <div className={styles.source}>{news?.source.name}:</div>
+          {news.title}
+        </div>
+      )}
     </div>
   );
 };
