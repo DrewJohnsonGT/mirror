@@ -17,11 +17,9 @@
 
 .moonPhase {
   font-size: 0.75rem;
-  font-weight: 100;
   margin-bottom: 0.25rem;
 }
 .nextFullMoon {
   color: rgb(187, 187, 187);
   font-size: 0.75rem;
-  font-weight: 100;
 }
