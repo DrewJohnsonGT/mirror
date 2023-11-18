@@ -5,9 +5,9 @@
     "node": true
   },
   "extends": [
-    "plugin:react/recommended",
     "standard-with-typescript",
-    "plugin:sort/recommended"
+    "plugin:sort/recommended",
+    "plugin:@next/next/recommended"
   ],
   "overrides": [],
   "parserOptions": {
@@ -23,12 +23,11 @@
       "version": "detect"
     }
   },
-  "plugins": ["react", "sort", "tss-unused-classes"],
+  "plugins": ["sort", "tss-unused-classes"],
   "rules": {
     "indent": "off",
     "import/no-default-export": "error",
     "sort/imports": "off",
-    "react/react-in-jsx-scope": "off",
     "semi": "off",
     "@typescript-eslint/semi": "off",
     "comma-dangle": "off",
@@ -38,12 +37,12 @@
     "@typescript-eslint/prefer-nullish-coalescing": "off",
     "@typescript-eslint/strict-boolean-expressions": "off",
     "@typescript-eslint/indent": "off",
-    "react/prop-types": "off",
     "multiline-ternary": "off",
     "tss-unused-classes/unused-classes": "warn",
     "max-lines": ["error", 300],
     "@typescript-eslint/naming-convention": "off",
-    "@typescript-eslint/space-before-function-paren": "off"
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@next/next/no-img-element": "off"
   },
   "ignorePatterns": ["next.config.js", "next-env.d.ts", "public/*"]
 }
