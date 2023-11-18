@@ -138,7 +138,6 @@ const ANYTIME = [
 
 const getTimeOfDay = () => {
   const hour = new Date().getHours();
-  console.log(hour);
   if (hour < 12 && hour > 2) {
     return TimeOfDay.Morning;
   }

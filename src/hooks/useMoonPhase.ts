@@ -50,8 +50,7 @@ export const useMoonPhase = () => {
   const updateMoonImage = () => {
     const { currentCycleDays, illuminationPercent } = getMoonPhase();
     const moonPhaseString = getMoonPhaseString(currentCycleDays);
-    const roundedIlluminationPercent =
-      100 - Math.round(illuminationPercent * 100);
+    const roundedIlluminationPercent = Math.round(illuminationPercent * 100);
     setMoonImage(getMoonImage(moonPhaseString, roundedIlluminationPercent));
     setNextFullMoon(getNextFullMoon(currentCycleDays));
     setMoonPhase(moonPhaseString);

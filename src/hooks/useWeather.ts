@@ -122,8 +122,6 @@ export const useWeather = (): Partial<WeatherResponse> => {
   const updateWeather = () => {
     getAPIData()
       .then((res: RawWeatherResponse) => {
-        console.log('FETCHED WEATHER');
-        console.log(res);
         setRawWeather(res);
       })
       .catch((e) => {
