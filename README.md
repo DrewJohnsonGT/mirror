@@ -1,3 +1,3 @@
 # Smart Mirror Display
 
-![image (1)](https://user-images.githubusercontent.com/19674743/233797741-295e575a-714d-40ab-bdd0-76f0689d81e0.png)
+![IMG_4627](https://github.com/DrewJohnsonGT/mirror/assets/19674743/433b2878-8fc0-4b64-ab35-d362f80d8ccb)
