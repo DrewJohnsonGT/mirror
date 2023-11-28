@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { NEWS_ITEM_REFRESH_RATE, NEWS_REFRESH_RATE } from 'util/constants';
 
-interface News {
+export interface News {
   title: string;
   description: string;
   url: string;
