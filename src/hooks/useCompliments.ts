@@ -100,6 +100,8 @@ const NIGHT_WINTER = [
   'May your night be as peaceful as a Christmas Eve! 🎄',
   'Sleep in heavenly peace, love.',
   'Sweet Christmas dreams, my love. 🎄',
+  'May your night be as magical as Christmas itself! 🎄',
+  'May your night be as bright as a Christmas star! 🌟',
 ];
 
 const ANYTIME = [
@@ -134,6 +136,8 @@ const ANYTIME = [
   "You're the reason for the season's joy!",
   'Your spirit is as festive as Christmas itself!',
   "You're the jingle to my bells! 🔔",
+  'You are the reason for the season!',
+  'You are the Christmas magic!',
 ];
 
 const getTimeOfDay = () => {
