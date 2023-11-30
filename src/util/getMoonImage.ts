@@ -73,24 +73,23 @@ const getMoonImageName = (phase: MoonPhase, ill: number) => {
     if ([50, 51].includes(ill)) return 'waxcres50';
   }
   if (phase === MoonPhase.WAXING_GIBBOUS) {
-    const waxingGibbousIll = 100 - ill;
-    if ([52, 53, 54, 55].includes(waxingGibbousIll)) return 'waxgib52';
-    if ([56, 57, 58, 59].includes(waxingGibbousIll)) return 'waxgib56';
-    if ([60, 61].includes(waxingGibbousIll)) return 'waxgib60';
-    if ([62, 63, 64, 65, 66].includes(waxingGibbousIll)) return 'waxgib62';
-    if ([67, 68].includes(waxingGibbousIll)) return 'waxgib67';
-    if ([69, 70, 71].includes(waxingGibbousIll)) return 'waxgib69';
-    if ([72, 73, 74, 75, 76].includes(waxingGibbousIll)) return 'waxgib72';
-    if ([77].includes(waxingGibbousIll)) return 'waxgib77';
-    if ([78, 79, 80, 81].includes(waxingGibbousIll)) return 'waxgib78';
-    if ([82, 83, 84, 85].includes(waxingGibbousIll)) return 'waxgib82';
-    if ([86].includes(waxingGibbousIll)) return 'waxgib86';
-    if ([87, 88, 89].includes(waxingGibbousIll)) return 'waxgib87';
-    if ([90, 91, 92].includes(waxingGibbousIll)) return 'waxgib90';
-    if ([93, 94, 95].includes(waxingGibbousIll)) return 'waxgib93';
-    if ([96, 97].includes(waxingGibbousIll)) return 'waxgib96';
-    if ([98].includes(waxingGibbousIll)) return 'waxgib98';
-    if ([99, 100].includes(waxingGibbousIll)) return 'waxgib99';
+    if ([52, 53, 54, 55].includes(ill)) return 'waxgib52';
+    if ([56, 57, 58, 59].includes(ill)) return 'waxgib56';
+    if ([60, 61].includes(ill)) return 'waxgib60';
+    if ([62, 63, 64, 65, 66].includes(ill)) return 'waxgib62';
+    if ([67, 68].includes(ill)) return 'waxgib67';
+    if ([69, 70, 71].includes(ill)) return 'waxgib69';
+    if ([72, 73, 74, 75, 76].includes(ill)) return 'waxgib72';
+    if ([77].includes(ill)) return 'waxgib77';
+    if ([78, 79, 80, 81].includes(ill)) return 'waxgib78';
+    if ([82, 83, 84, 85].includes(ill)) return 'waxgib82';
+    if ([86].includes(ill)) return 'waxgib86';
+    if ([87, 88, 89].includes(ill)) return 'waxgib87';
+    if ([90, 91, 92].includes(ill)) return 'waxgib90';
+    if ([93, 94, 95].includes(ill)) return 'waxgib93';
+    if ([96, 97].includes(ill)) return 'waxgib96';
+    if ([98].includes(ill)) return 'waxgib98';
+    if ([99, 100].includes(ill)) return 'waxgib99';
   }
   if (phase === MoonPhase.FULL_MOON) {
     return 'fm';

@@ -21,15 +21,19 @@ const getMoonPhase = (): {
   currentCycleDays: number;
   illuminationPercent: number;
 } => {
-  // seconds in lunar cycle
   const lunarSeconds = LUNAR_CYCLE_DAYS * 60 * 60 * 24 * 1000;
   const currentTimestamp = Date.now();
-  // time between current time and 2000 full moon
   const totalSeconds = currentTimestamp - FULL_MOON_YEAR_2000_TS;
   const secondsInCurrentCycle = totalSeconds % lunarSeconds;
-  const illuminationPercent = secondsInCurrentCycle / lunarSeconds;
-  const currentCycleDays = illuminationPercent * LUNAR_CYCLE_DAYS;
-  return { currentCycleDays, illuminationPercent };
+  const phaseFraction = secondsInCurrentCycle / lunarSeconds;
+  const currentCycleDays = phaseFraction * LUNAR_CYCLE_DAYS;
+  // Adjusting illumination calculation
+  const illuminationPercent =
+    (50 * (1 - Math.cos(2 * Math.PI * phaseFraction))) / 100;
+  return {
+    currentCycleDays,
+    illuminationPercent,
+  };
 };
 
 const getNextFullMoon = (currentCycleDays: number) => {
