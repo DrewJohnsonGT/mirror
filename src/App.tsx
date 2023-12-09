@@ -1,4 +1,5 @@
 import React from 'react';
+import { Snowflakes } from 'components/Snowflakes';
 import {
   Compliments,
   Crypto,
@@ -51,14 +52,17 @@ const MODULES = [
 ];
 const App = () => {
   return (
-    <div className="module-layout">
-      {MODULES.map(({ className, component: Component }) => (
-        <div className={className} key={className}>
-          <Component />
-        </div>
-      ))}
-      <div className="blank" />
-    </div>
+    <>
+      <div className="module-layout">
+        {MODULES.map(({ className, component: Component }) => (
+          <div className={className} key={className}>
+            <Component />
+          </div>
+        ))}
+        <div className="blank" />
+      </div>
+      <Snowflakes />
+    </>
   );
 };
 
