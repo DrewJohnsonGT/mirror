@@ -1,6 +1,6 @@
 import styles from './Snowflakes.module.css';
 
-const SNOWFLAKE_COUNT = 100;
+const SNOWFLAKE_COUNT = 70;
 const SNOWFLAKE_CHARACTER_LIST = ['❅', '❆', '❄'];
 
 export const Snowflakes = () => (
