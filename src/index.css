@@ -59,10 +59,6 @@ body,
   grid-area: fo;
 }
 
-.todo {
-  grid-area: td;
-}
-
 .crypto {
   display: flex;
   align-items: flex-end;
