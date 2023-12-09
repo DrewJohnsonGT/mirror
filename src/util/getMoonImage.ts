@@ -18,7 +18,7 @@ const getMoonImageName = (phase: MoonPhase, ill: number) => {
     if ([2].includes(ill)) return 'wanecres2';
     if ([3, 4].includes(ill)) return 'wanecres3';
     if ([5].includes(ill)) return 'wanecres5';
-    if ([6].includes(ill)) return 'wanecres6';
+    if ([6, 7].includes(ill)) return 'wanecres6';
     if ([8, 9].includes(ill)) return 'wanecres8';
     if ([10, 11].includes(ill)) return 'wanecres10';
     if ([12, 13, 14].includes(ill)) return 'wanecres12';

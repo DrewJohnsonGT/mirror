@@ -5,7 +5,7 @@ const MoonPhasesDisplay = () => {
   const illuminationExamples: Record<MoonPhase, number[]> = {
     [MoonPhase.WANING_GIBBOUS]: [99, 95, 90, 83, 75, 66],
     [MoonPhase.FULL_MOON]: [100],
-    [MoonPhase.WANING_CRESCENT]: [66, 50, 33, 16],
+    [MoonPhase.WANING_CRESCENT]: [50, 33, 16, 13, 10, 8, 5],
     [MoonPhase.NEW_MOON]: [0],
     [MoonPhase.WAXING_CRESCENT]: [16, 33, 50, 66],
     [MoonPhase.WAXING_GIBBOUS]: [66, 75, 83, 90, 95, 99],
