@@ -1,28 +1,30 @@
-import styles from './Snowflakes.module.css';
+import './Snowflakes.css';
 
-const SNOWFLAKE_COUNT = 70;
+const SNOWFLAKE_COUNT = 50;
 const SNOWFLAKE_CHARACTER_LIST = ['❅', '❆', '❄'];
 
 export const Snowflakes = () => (
-  <div className={styles.snowflakes} aria-hidden="true">
+  <div className="snowflakes" aria-hidden="true">
     {Array.from({ length: SNOWFLAKE_COUNT }).map((_, i) => (
       <div
         key={i}
-        className={styles.snowflakeFallAndShake}
+        className="snowflakeFallAndShake"
         style={{
-          animationDelay: `${Math.random() * 10}s, ${Math.random()}s`,
-          animationDuration: `${Math.random() * 20 + 10}s, ${
-            Math.random() * 20 + 4
+          animationDelay: `${Math.random() * 20}s, ${Math.random() * 5 + 5}s`,
+          animationDuration: `${Math.random() * 60 + 20}s, ${
+            Math.random() * 40 + 8
           }s`,
           opacity: `${Math.random() * 0.75 + 0.25}`,
-          scale: `${Math.random() * 2.5 + 0.5}`,
+          scale: `${Math.random() * 3.5 + 0.25}`,
           top: `${Math.random() * 100}%`,
         }}>
         <div
-          className={styles.snowflakeSpin}
+          className="snowflakeSpin"
           style={{
-            animationDelay: '0',
-            animationDuration: `${Math.random() * 3 + 5}s`,
+            animationDuration: `${Math.random() * 20 + 2}s`,
+            animationName: `snowflakes-spin-${
+              Math.random() > 0.5 ? 'clockwise' : 'counterclockwise'
+            }`,
           }}>
           {
             SNOWFLAKE_CHARACTER_LIST[
