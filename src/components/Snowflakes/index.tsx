@@ -17,6 +17,7 @@ export const Snowflakes = () => (
           opacity: `${Math.random() * 0.75 + 0.25}`,
           scale: `${Math.random() * 4.5 + 0.25}`,
           top: `${Math.random() * 100}%`,
+          zIndex: `${Math.floor(Math.random() * 3)}`,
         }}>
         <div
           className="snowflakeSpin"
