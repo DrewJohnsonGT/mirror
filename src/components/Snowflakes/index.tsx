@@ -12,10 +12,10 @@ export const Snowflakes = () => (
         style={{
           animationDelay: `${Math.random() * 20}s, ${Math.random() * 5 + 5}s`,
           animationDuration: `${Math.random() * 60 + 20}s, ${
-            Math.random() * 40 + 8
+            Math.random() * 40 + 20
           }s`,
           opacity: `${Math.random() * 0.75 + 0.25}`,
-          scale: `${Math.random() * 3.5 + 0.25}`,
+          scale: `${Math.random() * 4.5 + 0.25}`,
           top: `${Math.random() * 100}%`,
         }}>
         <div
