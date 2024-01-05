@@ -4,7 +4,6 @@ import {
   Compliments,
   Crypto,
   DateTime,
-  DaysUntil,
   Forcast,
   Moon,
   News,
@@ -40,10 +39,6 @@ const MODULES = [
   {
     className: 'news',
     component: News,
-  },
-  {
-    className: 'days-until',
-    component: DaysUntil,
   },
   {
     className: 'blank',
