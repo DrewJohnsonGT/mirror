@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { DAYS_UNTIL_REFRESH_RATE } from 'util/constants';
 
 export const useDaysUntil = (date: Date) => {
   const [days, setDays] = useState(0);
@@ -10,7 +11,7 @@ export const useDaysUntil = (date: Date) => {
         (date.getTime() - now.getTime()) / 1000 / 60 / 60 / 24,
       );
       setDays(diff);
-    }, 1000);
+    }, DAYS_UNTIL_REFRESH_RATE);
 
     return () => {
       clearInterval(daysUntilInterval);
