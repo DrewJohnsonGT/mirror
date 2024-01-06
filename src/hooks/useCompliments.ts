@@ -156,7 +156,7 @@ const getTimeOfDay = () => {
 
 const getTimeOfYear = () => {
   const month = new Date().getMonth();
-  if (month >= 11 || month <= 12) {
+  if (month >= 10 && month <= 11) {
     return TimeOfYear.Winter;
   }
   if (month >= 2 && month <= 4) {
