@@ -130,14 +130,14 @@ const ANYTIME = [
   'Hi bübels',
   'Hi büb',
   // XMAS
-  "You're as magical as a Christmas miracle! 🎄",
-  'Your heart is as full as a Christmas stocking!',
-  'You sparkle like snowflakes in the sun! ❄️❄️❄️',
-  "You're the reason for the season's joy!",
-  'Your spirit is as festive as Christmas itself!',
-  "You're the jingle to my bells! 🔔",
-  'You are the reason for the season!',
-  'You are the Christmas magic!',
+  // "You're as magical as a Christmas miracle! 🎄",
+  // 'Your heart is as full as a Christmas stocking!',
+  // 'You sparkle like snowflakes in the sun! ❄️❄️❄️',
+  // "You're the reason for the season's joy!",
+  // 'Your spirit is as festive as Christmas itself!',
+  // "You're the jingle to my bells! 🔔",
+  // 'You are the reason for the season!',
+  // 'You are the Christmas magic!',
 ];
 
 const getTimeOfDay = () => {
