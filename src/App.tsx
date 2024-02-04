@@ -1,5 +1,4 @@
 import React from 'react';
-import { Snowflakes } from 'components/Snowflakes';
 import {
   Compliments,
   Crypto,
@@ -56,7 +55,6 @@ const App = () => {
         ))}
         <div className="blank" />
       </div>
-      <Snowflakes />
     </>
   );
 };
