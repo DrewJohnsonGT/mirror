@@ -75,7 +75,7 @@ const getAPIData = async () =>
     .then((data) => data);
 
 const getWeather = (weather: RawWeatherResponse) => {
-  if (!weather) return {};
+  if (!weather?.current) return {};
   const currentTemperature = formatDisplayTemp(weather.current.temp);
   const feelsLikeTemperature = formatDisplayTemp(weather.current.feels_like);
   const humidy = weather.current.humidity;
@@ -140,7 +140,7 @@ export const useWeather = (): Partial<WeatherResponse> => {
       clearInterval(weatherInterval);
     };
   }, []);
-  if (!rawWeather) return {};
+  if (!rawWeather?.daily) return {};
   const weather = getWeather(rawWeather);
   const forcast = getForcast(rawWeather.daily);
   const { high: todaysHigh, low: todaysLow } = forcast[0];
