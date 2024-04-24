@@ -186,6 +186,12 @@ const ANYTIME = [
   // 'You are the Christmas magic!',
 ];
 
+const getOneOffCompliment = () => {
+  if (new Date().getMonth() === 3 && new Date().getDate() === 25) {
+    return 'Happy Birthday!! 🎂🎈🎁🥳';
+  }
+};
+
 const getTimeOfDay = () => {
   const hour = new Date().getHours();
   if (hour < 12 && hour > 2) {
@@ -242,6 +248,11 @@ const getCompliment = (timeOfDay: TimeOfDay) => {
 export const useCompliments = () => {
   const [compliment, setCompliment] = useState('');
   useEffect(() => {
+    const oneOffCompliment = getOneOffCompliment();
+    if (oneOffCompliment) {
+      setCompliment(oneOffCompliment);
+      return;
+    }
     const timeOfDay = getTimeOfDay();
     setCompliment(getCompliment(timeOfDay));
     const complimentsInterval = setInterval(() => {
