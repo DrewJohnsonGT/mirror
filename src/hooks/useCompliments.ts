@@ -187,7 +187,7 @@ const ANYTIME = [
 ];
 
 const getOneOffCompliment = () => {
-  if (new Date().getMonth() === 3 && new Date().getDate() === 25) {
+  if (new Date().getMonth() === 3 && new Date().getDate() === 23) {
     return 'Happy Birthday!! 🎂🎈🎁🥳';
   }
 };
