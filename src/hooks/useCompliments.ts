@@ -248,14 +248,14 @@ const getCompliment = (timeOfDay: TimeOfDay) => {
 export const useCompliments = () => {
   const [compliment, setCompliment] = useState('');
   useEffect(() => {
-    const oneOffCompliment = getOneOffCompliment();
-    if (oneOffCompliment) {
-      setCompliment(oneOffCompliment);
-      return;
-    }
     const timeOfDay = getTimeOfDay();
     setCompliment(getCompliment(timeOfDay));
     const complimentsInterval = setInterval(() => {
+      const oneOffCompliment = getOneOffCompliment();
+      if (oneOffCompliment) {
+        setCompliment(oneOffCompliment);
+        return;
+      }
       const timeOfDay = getTimeOfDay();
       setCompliment(getCompliment(timeOfDay));
     }, COMPLIMENTS_REFRESH_RATE);
