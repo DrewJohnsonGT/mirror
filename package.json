@@ -11,7 +11,7 @@
     "lint": "eslint --ext .ts,.tsx src",
     "format": "prettier --write 'src/**/*.{ts,tsx}'",
     "validate": "npm run typecheck && yarn lint",
-    "preview": "vite preview"
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@vercel/analytics": "^1.1.1",
