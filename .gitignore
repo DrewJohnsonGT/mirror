@@ -1,8 +1,15 @@
 # Logs
 logs
 *.log
+
+# Use PNPM
 yarn-debug.log*
 yarn-error.log*
+npm-debug.log*
+npm-error.log*
+
+yarn.lock
+package-lock.json
 
 node_modules
 dist
