@@ -1,7 +1,11 @@
 # Smart Mirror Display
 
-Fully custom smart mirror display. Dynamic display that shows various data
-points gathered from public APIs.
+Fully custom smart mirror. Dynamic display that shows various data points
+gathered from public APIs.
+
+![Screenshot](docs/screenshot.jpeg 'Smart Mirror Display')
+
+![IMG_4627](https://github.com/DrewJohnsonGT/mirror/assets/19674743/433b2878-8fc0-4b64-ab35-d362f80d8ccb)
 
 ## Modules
 
@@ -15,6 +19,4 @@ points gathered from public APIs.
 - Compliments
 
 The app itself runs on a Raspberry Pi 4 with a 24" monitor and a two-way pane of
-glass over the top:
-
-![IMG_4627](https://github.com/DrewJohnsonGT/mirror/assets/19674743/433b2878-8fc0-4b64-ab35-d362f80d8ccb)
+glass over the top
