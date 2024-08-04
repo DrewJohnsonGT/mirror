@@ -14,7 +14,7 @@ export const getMoonImage = (phase: MoonPhase, ill: number) => {
 
 const getMoonImageName = (phase: MoonPhase, ill: number) => {
   if (phase === MoonPhase.WANING_CRESCENT) {
-    if ([0, 1].includes(ill)) return 'wanecres1.png';
+    if ([0, 1].includes(ill)) return 'wanecres1';
     if ([2].includes(ill)) return 'wanecres2';
     if ([3, 4].includes(ill)) return 'wanecres3';
     if ([5].includes(ill)) return 'wanecres5';
