@@ -9,12 +9,11 @@ const FULL_MOON = 14.8;
 
 const getMoonPhaseString = (cycleDays: number): MoonPhase => {
   if (cycleDays < 1) return MoonPhase.NEW_MOON;
-  if (cycleDays < 8.38264692644) return MoonPhase.WAXING_CRESCENT;
-  if (cycleDays < 13.76529385288) return MoonPhase.WAXING_GIBBOUS;
-  if (cycleDays < 15.76529385288) return MoonPhase.FULL_MOON;
-  if (cycleDays < 21.14794077932) return MoonPhase.WANING_GIBBOUS;
-  if (cycleDays < 28.53058770576) return MoonPhase.WANING_CRESCENT;
-  return MoonPhase.NEW_MOON;
+  if (cycleDays < 7.4) return MoonPhase.WAXING_CRESCENT;
+  if (cycleDays < 14.8) return MoonPhase.WAXING_GIBBOUS;
+  if (cycleDays < 22.1) return MoonPhase.FULL_MOON;
+  if (cycleDays < 29.5) return MoonPhase.WANING_GIBBOUS;
+  return MoonPhase.WANING_CRESCENT;
 };
 
 const getMoonPhase = (): {
@@ -28,8 +27,7 @@ const getMoonPhase = (): {
   const phaseFraction = secondsInCurrentCycle / lunarSeconds;
   const currentCycleDays = phaseFraction * LUNAR_CYCLE_DAYS;
   // Adjusting illumination calculation
-  const illuminationPercent =
-    (50 * (1 - Math.cos(2 * Math.PI * phaseFraction))) / 100;
+  const illuminationPercent = (1 - Math.cos(2 * Math.PI * phaseFraction)) / 2;
   return {
     currentCycleDays,
     illuminationPercent,

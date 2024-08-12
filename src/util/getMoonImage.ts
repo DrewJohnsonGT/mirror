@@ -70,7 +70,7 @@ const getMoonImageName = (phase: MoonPhase, ill: number) => {
     if ([41].includes(ill)) return 'waxcres41';
     if ([42, 43, 44, 45].includes(ill)) return 'waxcres42';
     if ([46, 47, 48, 49].includes(ill)) return 'waxcres46';
-    if ([50, 51].includes(ill)) return 'waxcres50';
+    if ([50, 51, 52, 53, 54].includes(ill)) return 'waxcres50';
   }
   if (phase === MoonPhase.WAXING_GIBBOUS) {
     if ([52, 53, 54, 55].includes(ill)) return 'waxgib52';
