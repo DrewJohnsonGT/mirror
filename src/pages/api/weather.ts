@@ -2,7 +2,7 @@ import { type NextApiRequest, type NextApiResponse } from 'next';
 
 const LATITUDE = '39.329239';
 const LONGITUDE = '-82.101257';
-const WEATHER_ENDPOINT = 'https://api.openweathermap.org/data/2.5/onecall';
+const WEATHER_ENDPOINT = 'https://api.openweathermap.org/data/3.0/onecall';
 
 const generateOpenWeatherEndpoint = () =>
   WEATHER_ENDPOINT +
