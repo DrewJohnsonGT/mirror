@@ -13,6 +13,8 @@ export const MarketPriceTicker = ({
   });
   const formattedCurrentPrice = Intl.NumberFormat('en-US', {
     currency: 'USD',
+    maximumFractionDigits: 0,
+    minimumFractionDigits: 0,
     style: 'currency',
   }).format(currentPrice);
   return (
