@@ -23,7 +23,7 @@ export const useMarketSymbol = ({ symbol }: { symbol: string }) => {
     return () => {
       clearInterval(marketSymbolInterval);
     };
-  }, []);
+  }, [symbol]);
 
   return { currentPrice };
 };

@@ -18,7 +18,8 @@ export const Snowflakes = () => (
           scale: `${Math.random() * 4.5 + 0.25}`,
           top: `${Math.random() * 100}%`,
           zIndex: `${Math.floor(Math.random() * 3)}`,
-        }}>
+        }}
+      >
         <div
           className="snowflakeSpin"
           style={{
@@ -26,7 +27,8 @@ export const Snowflakes = () => (
             animationName: `snowflakes-spin-${
               Math.random() > 0.5 ? 'clockwise' : 'counterclockwise'
             }`,
-          }}>
+          }}
+        >
           {
             SNOWFLAKE_CHARACTER_LIST[
               Math.floor(Math.random() * SNOWFLAKE_CHARACTER_LIST.length)
