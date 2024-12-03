@@ -175,15 +175,17 @@ const ANYTIME = [
   'You’re a bright spot in any moment',
   'Elegance and joy are in all you do',
   'You’re like a breath of fresh air',
-  // XMAS
-  // "You're as magical as a Christmas miracle! 🎄",
-  // 'Your heart is as full as a Christmas stocking!',
-  // 'You sparkle like snowflakes in the sun! ❄️❄️❄️',
-  // "You're the reason for the season's joy!",
-  // 'Your spirit is as festive as Christmas itself!',
-  // "You're the jingle to my bells! 🔔",
-  // 'You are the reason for the season!',
-  // 'You are the Christmas magic!',
+];
+
+const XMAS = [
+  "You're as magical as a Christmas miracle! 🎄",
+  'Your heart is as full as a Christmas stocking!',
+  'You sparkle like snowflakes in the sun! ❄️❄️❄️',
+  "You're the reason for the season's joy!",
+  'Your spirit is as festive as Christmas itself!',
+  "You're the jingle to my bells! 🔔",
+  'You are the reason for the season!',
+  'You are the Christmas magic!',
 ];
 
 const getOneOffCompliment = () => {
@@ -241,6 +243,9 @@ const getCompliment = (timeOfDay: TimeOfDay) => {
   if (Math.random() < 0.25) return randomValue(ANYTIME);
   if (getTimeOfYear() === TimeOfYear.Winter && Math.random() < 0.5) {
     return randomValue(winterTimeMap[timeOfDay]);
+  }
+  if (new Date().getMonth() === 11 && Math.random() < 0.5) {
+    return randomValue(XMAS);
   }
   return randomValue(timeMap[timeOfDay]);
 };
